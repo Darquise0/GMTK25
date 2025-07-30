@@ -6,10 +6,19 @@ public class DialogueManager : MonoBehaviour
 {
     private string[] lines;
     public float textSpeed;
+
     public Transform playerPos;
+    public GameObject dialogueBubblePrefab;
+
+    public Dialogue tempDialogueData;
+
     public Canvas canvas;
 
-    public GameObject dialogueBubblePrefab;
+    public void Start()
+    {
+        StartCoroutine (startDialogue(tempDialogueData));
+    }
+
     IEnumerator startDialogue(Dialogue dialogueData)
     {
         GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, playerPos.position + new Vector3(2, 4, 0), Quaternion.identity);
