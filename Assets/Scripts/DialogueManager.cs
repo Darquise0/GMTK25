@@ -9,19 +9,12 @@ public class DialogueManager : MonoBehaviour
 
     public Transform playerPos;
     public GameObject dialogueBubblePrefab;
-
-    public Dialogue tempDialogueData;
-
     public Canvas canvas;
 
-    public void Start()
-    {
-        StartCoroutine (startDialogue(tempDialogueData));
-    }
-
+    public Vector3 dbOffset;
     IEnumerator startDialogue(Dialogue dialogueData)
     {
-        GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, playerPos.position + new Vector3(2, 4, 0), Quaternion.identity);
+        GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, playerPos.position + dbOffset, Quaternion.identity);
         dialogueBubble.transform.parent = canvas.transform;
         TextMeshProUGUI tmp = dialogueBubble.GetComponentInChildren<TextMeshProUGUI>();
 
