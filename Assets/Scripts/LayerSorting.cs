@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class LayerSorting : MonoBehaviour
 {
-    [Header("References")]
     public SpriteRenderer treeRenderer;
-    public Transform player;
+    public string playerTag = "Player";
 
-    [Header("Settings")]
     public float cutoffY = -1f;
     public string layerAbovePlayer = "Tree";
     public string layerBelowPlayer = "Ground";
 
+    private Transform playerInRange = null;
+
     void Update()
     {
-        if (player == null || treeRenderer == null) return;
+        if (playerInRange == null || treeRenderer == null) return;
 
-        if (player.position.y > transform.position.y + cutoffY)
+        if (playerInRange.position.y > transform.position.y + cutoffY)
         {
             treeRenderer.sortingLayerName = layerAbovePlayer;
         }
@@ -24,5 +24,20 @@ public class LayerSorting : MonoBehaviour
             treeRenderer.sortingLayerName = layerBelowPlayer;
         }
     }
-}
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            playerInRange = other.transform;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag(playerTag) && other.transform == playerInRange)
+        {
+            playerInRange = null;
+        }
+    }
+}

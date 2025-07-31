@@ -15,7 +15,7 @@ public class FlashlightDirections : MonoBehaviour
         if (inputDir != Vector2.zero)
         {
             float angle = Mathf.Atan2(inputDir.y, inputDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // adjust -90 if needed
+            transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
         }   
     }
 }
