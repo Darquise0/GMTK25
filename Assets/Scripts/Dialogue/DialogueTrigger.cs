@@ -3,6 +3,6 @@ using System.Collections;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue myDialogue;
+    public DialogueData myDialogue;
     public DialogueManager dm;
 }
