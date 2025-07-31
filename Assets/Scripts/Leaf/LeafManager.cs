@@ -3,17 +3,22 @@ using ClearLeaves;
 
 namespace ClearLeaves
 {
-    public class LeafManager : MinigameManager
+    public class LeafManager : MonoBehaviour
     {
         private int totalLeaves;
         public LeafSpawner leafSpawner;
 
-        void Awake()
-        {
-            totalLeaves = LeafSpawner.leafCount;
-        }
+        public bool isRunning;
 
-        new public void startMinigame() { this.Awake();  leafSpawner.doAwake(); }
+        public void startMinigame()
+        {
+            if (!isRunning)
+            {
+                isRunning = true;
+                totalLeaves = LeafSpawner.leafCount;
+                leafSpawner.doAwake();
+            }
+        }
 
         public void LeafCleared()
         {
@@ -21,7 +26,9 @@ namespace ClearLeaves
 
             if (totalLeaves <= 0)
             {
-                gameObject.SetActive(false);
+                isRunning = false;
+                PlayerMovement.unfreeze();
+                this.gameObject.SetActive(false);
             }
         }
     }

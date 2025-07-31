@@ -1,17 +1,16 @@
 using TMPro;
 using UnityEngine;
 
-public class JournalManager : MinigameManager
+public class JournalManager : MonoBehaviour
 {
     JournalData journalData;
 
     public TextMeshProUGUI[] entries = new TextMeshProUGUI[3];
 
-    new public void startMinigame(ScriptableObject jd)
+    public void startMinigame(JournalData jd)
     {
-        JournalData temp = jd as JournalData;
-        Debug.Log(temp.entries.ToString());
-        prepareEntries(jd as JournalData);
+        Debug.Log(jd.entries.ToString());
+        prepareEntries(jd);
     }
 
     void prepareEntries(JournalData newJournalData)
@@ -27,6 +26,7 @@ public class JournalManager : MinigameManager
     {
         if (playerChoice == journalData.contradictionIndex)
         {
+            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
     }

@@ -2,16 +2,16 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WaveManager : MinigameManager
+public class WaveManager : MonoBehaviour
 {
     public WaveDisplayExample waveDisplayExample;
     public WaveDisplayPlayer waveDisplayPlayer;
 
     [SerializeField] float waitTime;
 
-    new public void startMinigame(ScriptableObject wd)
+    public void startMinigame(WaveData wd)
     {
-        waveDisplayExample.waveData = wd as WaveData;
+        waveDisplayExample.waveData = wd;
     }
 
     public void checkSolved()
@@ -26,6 +26,7 @@ public class WaveManager : MinigameManager
         {
             // more happening
             waveDisplayPlayer.resetSliders();
+            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
     }
