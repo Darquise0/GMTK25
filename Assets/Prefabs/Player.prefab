@@ -217,7 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cdae77e858edd46adb37d5b831b359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 10
+  destroyAfterSeconds: 2
+  playerLights: {fileID: 142890788845614688}
+  healthBarFillImage: {fileID: 0}
 --- !u!114 &142890788845614688
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,13 +1,23 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Combat : MonoBehaviour
 {
     private Dictionary<GameObject, float> enemiesInLight = new Dictionary<GameObject, float>();
     public float destroyAfterSeconds = 10f;
+    public Lights playerLights;
+    public Image healthBarFillImage;
+
 
     void Update()
     {
+        if (playerLights != null && healthBarFillImage != null)
+        {
+            float fillAmount = 1f - Mathf.InverseLerp(0f, playerLights.nightPlayerIntensity, playerLights.playerLight.intensity);
+            healthBarFillImage.fillAmount = fillAmount;
+        }
+        
         List<GameObject> toRemove = new List<GameObject>();
 
         foreach (var kvp in new Dictionary<GameObject, float>(enemiesInLight))

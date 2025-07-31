@@ -59,13 +59,6 @@ public class Enemy : MonoBehaviour
         {
             drainTimer = 0f;
         }
-
-        // Update health bar
-        if (playerLights != null && healthBarFillImage != null)
-        {
-            float fillAmount = 1f - Mathf.InverseLerp(0f, playerLights.nightPlayerIntensity, playerLights.playerLight.intensity);
-            healthBarFillImage.fillAmount = fillAmount;
-        }
     }
 
     private void FixedUpdate()
