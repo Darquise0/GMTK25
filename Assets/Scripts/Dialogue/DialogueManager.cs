@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine isTyping;
     public float textSpeed;
 
-    public GameObject player;
+    public GameObject player,target;
     public GameObject dialogueBubblePrefab;
     public Canvas canvas;
     public Vector3 dbOffset;
@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
         PlayerMovement movement = player.GetComponent<PlayerMovement>();
         movement.freeze();
 
-        GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, player.transform.position + dbOffset, Quaternion.identity);
+        GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, target.transform.position + dbOffset, Quaternion.identity);
         dialogueBubble.transform.parent = canvas.transform;
         TextMeshProUGUI tmp = dialogueBubble.GetComponentInChildren<TextMeshProUGUI>();
 

@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class DialogueTriggerInteract : DialogueTrigger
 {
-    void OnCollisionStay(Collision collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (InputManager.Interaction)
+        if (other.gameObject.tag == "Player" && InputManager.Interaction)
         {
+            Debug.Log("Entered!");
             dm.trigger(this.myDialogue);
-        }
+        } 
     }
 }

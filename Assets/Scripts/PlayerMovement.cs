@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (!frozen)
-        { 
+        {
             _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
             _rb.linearVelocity = _movement * _moveSpeed;
@@ -38,9 +38,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 _animator.SetFloat(_lastHorizontal, _movement.x);
                 _animator.SetFloat(_lastVertical, _movement.y);
-            } 
+            }
         }
-
+        else
+        {
+            _rb.linearVelocity =new Vector2(0f,0f);
+        }
     }
 
     public void freeze() {
