@@ -12,6 +12,11 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBubblePrefab;
     public Canvas canvas;
     public Vector3 dbOffset;
+
+    public void trigger(Dialogue dialogue)
+    {
+        StartCoroutine(startDialogue(dialogue));
+    }
     IEnumerator startDialogue(Dialogue dialogueData)
     {
         PlayerMovement movement = player.GetComponent<PlayerMovement>();
