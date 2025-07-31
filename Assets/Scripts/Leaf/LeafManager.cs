@@ -6,10 +6,18 @@ namespace ClearLeaves
     public class LeafManager : MonoBehaviour
     {
         private int totalLeaves;
+        public LeafSpawner leafSpawner;
 
-        void Awake()
+        public bool isRunning;
+
+        public void startMinigame()
         {
-            totalLeaves = LeafSpawner.leafCount;
+            if (!isRunning)
+            {
+                isRunning = true;
+                totalLeaves = LeafSpawner.leafCount;
+                leafSpawner.doAwake();
+            }
         }
 
         public void LeafCleared()
@@ -18,7 +26,9 @@ namespace ClearLeaves
 
             if (totalLeaves <= 0)
             {
-                gameObject.SetActive(false);
+                isRunning = false;
+                PlayerMovement.unfreeze();
+                this.gameObject.SetActive(false);
             }
         }
     }

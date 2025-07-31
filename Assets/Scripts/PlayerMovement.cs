@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private const string _lastHorizontal = "LastHorizontal";
     private const string _lastVertical = "LastVertical";
 
-    private bool frozen;
+    static bool frozen;
 
     private void Awake()
     {
@@ -46,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void freeze() {
+    public static void freeze() {
         frozen = true;
     }
 
-    public void unfreeze() {
+    public static void unfreeze() {
         frozen = false;
     }
 }

@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine isTyping;
     public float textSpeed;
 
-    public GameObject player,target;
+    public GameObject target;
     public GameObject dialogueBubblePrefab;
     public Canvas canvas;
     public Vector3 dbOffset;
@@ -19,8 +19,7 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator startDialogue(DialogueData dialogueData)
     {
-        PlayerMovement movement = player.GetComponent<PlayerMovement>();
-        movement.freeze();
+        PlayerMovement.freeze();
 
         GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, target.transform.position + dbOffset, Quaternion.identity);
         dialogueBubble.transform.parent = canvas.transform;
@@ -33,7 +32,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitUntil(() => !InputManager.Interaction);
         }
         Destroy(dialogueBubble);
-        movement.unfreeze();
+        PlayerMovement.unfreeze();
     }
 
     IEnumerator typeLine(string line, TextMeshProUGUI tmp)

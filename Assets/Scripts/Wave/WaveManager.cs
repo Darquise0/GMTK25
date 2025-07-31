@@ -9,6 +9,11 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] float waitTime;
 
+    public void startMinigame(WaveData wd)
+    {
+        waveDisplayExample.waveData = wd;
+    }
+
     public void checkSolved()
     {
         StartCoroutine(waitCheck());
@@ -20,6 +25,8 @@ public class WaveManager : MonoBehaviour
         && waveDisplayPlayer.wavelengthSlider.value == waveDisplayExample.waveData.neededWavelength)
         {
             // more happening
+            waveDisplayPlayer.resetSliders();
+            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
     }
