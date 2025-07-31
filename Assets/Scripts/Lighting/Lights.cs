@@ -3,11 +3,13 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-public class DayNightCycle : MonoBehaviour
+public class Lights : MonoBehaviour
 {
     public Light2D globalLight;
     public Light2D playerLight;
     public Light2D flashlight;
+    public AudioSource flicker;
+    public AudioSource click;
 
     public float dayGlobalIntensity = 35f;
     public float nightGlobalIntensity = 0.2f;
@@ -69,6 +71,7 @@ public class DayNightCycle : MonoBehaviour
 
         if (Keyboard.current.fKey.wasPressedThisFrame && flashlightBatteryRemaining > 0f)
         {
+            click.Play();
             flashlightIsOn = !flashlightIsOn;
         }
 
@@ -128,6 +131,11 @@ public class DayNightCycle : MonoBehaviour
 
     private IEnumerator FlickerOffEffect()
     {
+        if (flicker != null)
+        {
+            flicker.Play();
+        }
+
         if (isFlickering) yield break;
 
         isFlickering = true;
@@ -151,6 +159,11 @@ public class DayNightCycle : MonoBehaviour
 
     private IEnumerator AmbientFlicker()
     {
+        if (flicker != null)
+        {
+            flicker.Play();
+        }
+
         if (isAmbientFlickering || isForcedFlickering) yield break;
 
         isAmbientFlickering = true;
@@ -175,6 +188,11 @@ public class DayNightCycle : MonoBehaviour
 
     private IEnumerator ForcedFlickerEffect()
     {
+        if (flicker != null)
+        {
+            flicker.Play();
+        }
+
         if (isForcedFlickering) yield break;
 
         isForcedFlickering = true;
