@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DialogueTriggerProximity : DialogueTrigger
 {
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("Entered!");
         dm.trigger(this.myDialogue);

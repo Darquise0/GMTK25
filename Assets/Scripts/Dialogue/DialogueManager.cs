@@ -13,11 +13,11 @@ public class DialogueManager : MonoBehaviour
     public Canvas canvas;
     public Vector3 dbOffset;
 
-    public void trigger(Dialogue dialogue)
+    public void trigger(DialogueData dialogue)
     {
         StartCoroutine(startDialogue(dialogue));
     }
-    IEnumerator startDialogue(Dialogue dialogueData)
+    IEnumerator startDialogue(DialogueData dialogueData)
     {
         PlayerMovement movement = player.GetComponent<PlayerMovement>();
         movement.freeze();
