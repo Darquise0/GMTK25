@@ -1001,11 +1001,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1506693466}
   - component: {fileID: 1506693465}
-  - component: {fileID: 1506693467}
   - component: {fileID: 1506693469}
   - component: {fileID: 1506693468}
   - component: {fileID: 1506693470}
   - component: {fileID: 1506693471}
+  - component: {fileID: 1506693472}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1085,34 +1085,6 @@ Transform:
   - {fileID: 611825350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1506693467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506693464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4fc46af19effe418546dc0e35a70a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalLight: {fileID: 619394801}
-  playerLight: {fileID: 1228960653}
-  flashlight: {fileID: 611825351}
-  flicker: {fileID: 611825353}
-  click: {fileID: 1228960654}
-  dayGlobalIntensity: 35
-  nightGlobalIntensity: 0.1
-  dayPlayerIntensity: 0
-  nightPlayerIntensity: 2
-  transitionDuration: 3
-  flashlightBatteryLife: 10
-  rechargeAmount: 10
-  allowAmbientFlicker: 1
-  flickerChancePerSecond: 0.05
-  flickerDuration: 0.05
-  ambientFlickerDelay: 10
 --- !u!95 &1506693468
 Animator:
   serializedVersion: 7
@@ -1221,6 +1193,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1506693472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506693464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db1c2e6ce5f604688c65f234b4210d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalLight: {fileID: 619394801}
+  playerLight: {fileID: 1228960653}
+  flashlight: {fileID: 611825351}
+  flicker: {fileID: 611825353}
+  click: {fileID: 1228960654}
+  dayGlobalIntensity: 35
+  nightGlobalIntensity: 0.2
+  dayPlayerIntensity: 0
+  nightPlayerIntensity: 2
+  transitionDuration: 3
+  flashlightBatteryLife: 30
+  rechargeAmount: 10
+  allowAmbientFlicker: 1
+  flickerChancePerSecond: 0.2
+  flickerDuration: 0.05
+  ambientFlickerDelay: 10
 --- !u!1 &1598188403
 GameObject:
   m_ObjectHideFlags: 0
