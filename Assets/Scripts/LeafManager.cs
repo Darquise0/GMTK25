@@ -18,7 +18,7 @@ namespace ClearLeaves
 
             if (totalLeaves <= 0)
             {
-                Debug.Log("You cleared all the leaves");
+                gameObject.SetActive(false);
             }
         }
     }
