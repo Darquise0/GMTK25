@@ -151,7 +151,6 @@ public class Lights : MonoBehaviour
 
     public void RechargeToNextBar()
     {
-        // Don't crank if flashlight is on or battery is already full
         if (flashlightIsOn || flashlightBatteryRemaining >= flashlightBatteryLife)
         {
             Debug.Log("Cannot crank: flashlight is on or battery is full.");
