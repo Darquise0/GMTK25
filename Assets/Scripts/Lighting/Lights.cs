@@ -8,8 +8,13 @@ public class Lights : MonoBehaviour
     public Light2D globalLight;
     public Light2D playerLight;
     public Light2D flashlight;
+    public GameObject bar1;
+    public GameObject bar2;
+    public GameObject bar3;
+    public GameObject bar4;
     public AudioSource flicker;
     public AudioSource click;
+    public AudioSource crank;
 
     public float dayGlobalIntensity = 35f;
     public float nightGlobalIntensity = 0.2f;
@@ -27,7 +32,6 @@ public class Lights : MonoBehaviour
     private bool flashlightIsOn = false;
 
     public float flashlightBatteryLife = 30f;
-    public float rechargeAmount = 10f;
     private float flashlightBatteryRemaining;
 
     private bool isFlickering = false;
@@ -41,9 +45,12 @@ public class Lights : MonoBehaviour
     private float ambientFlickerCooldown = 0f;
     public float ambientFlickerDelay = 10f;
 
+    public float crankInterval = 3f;
+    bool isCranking = false;
 
     void Start()
     {
+        UpdateBatteryUI();
         globalLight.intensity = dayGlobalIntensity;
         playerLight.intensity = dayPlayerIntensity;
         flashlight.intensity = 0f;
@@ -73,15 +80,22 @@ public class Lights : MonoBehaviour
         {
             click.Play();
             flashlightIsOn = !flashlightIsOn;
+            if (!flashlightIsOn)
+            {
+                Debug.Log("Flashlight turned off. Battery remaining: " + flashlightBatteryRemaining.ToString("F1") + "s");
+            }
         }
 
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            StopCoroutine(FlickerOffEffect());
-            isFlickering = false;
-            flashlightIsOn = false;
-            RechargeBattery(rechargeAmount);
-            Debug.Log("Battery recharged: " + flashlightBatteryRemaining.ToString("F1") + "s");
+            if (!flashlightIsOn && flashlightBatteryRemaining < flashlightBatteryLife)
+            {
+                StartCoroutine(CrankRecharge());
+            }
+            else
+            {
+                Debug.Log("Cannot crank: flashlight is on or battery is full.");
+            }
         }
 
         if (Keyboard.current.gKey.wasPressedThisFrame)
@@ -122,11 +136,37 @@ public class Lights : MonoBehaviour
         {
             flashlight.intensity = (flashlightIsOn && isNight) ? 3f : 0f;
         }
+        UpdateBatteryUI();
+    }
+    void UpdateBatteryUI()
+    {
+        float batteryPercent = flashlightBatteryRemaining / flashlightBatteryLife;
+        int barCount = Mathf.CeilToInt(batteryPercent * 4);
+
+        bar1.SetActive(barCount >= 1);
+        bar2.SetActive(barCount >= 2);
+        bar3.SetActive(barCount >= 3);
+        bar4.SetActive(barCount >= 4);
     }
 
-    public void RechargeBattery(float amount)
+    public void RechargeToNextBar()
     {
-        flashlightBatteryRemaining = Mathf.Min(flashlightBatteryRemaining + amount, flashlightBatteryLife);
+        // Don't crank if flashlight is on or battery is already full
+        if (flashlightIsOn || flashlightBatteryRemaining >= flashlightBatteryLife)
+        {
+            Debug.Log("Cannot crank: flashlight is on or battery is full.");
+            return;
+        }
+
+        float barSize = flashlightBatteryLife * 0.25f;
+        int currentBar = Mathf.FloorToInt(flashlightBatteryRemaining / barSize);
+
+        if (currentBar < 4)
+        {
+            flashlightBatteryRemaining = Mathf.Min((currentBar + 1) * barSize, flashlightBatteryLife);
+            Debug.Log("Cranked up to bar " + (currentBar + 1) + " → Battery: " + flashlightBatteryRemaining.ToString("F1") + "s");
+            UpdateBatteryUI();
+        }
     }
 
     private IEnumerator FlickerOffEffect()
@@ -155,6 +195,7 @@ public class Lights : MonoBehaviour
         flashlight.intensity = 0f;
         flashlightIsOn = false;
         isFlickering = false;
+        UpdateBatteryUI();
     }
 
     private IEnumerator AmbientFlicker()
@@ -213,4 +254,30 @@ public class Lights : MonoBehaviour
 
         isForcedFlickering = false;
     }
+
+    private IEnumerator CrankRecharge()
+    {
+        isCranking = true;
+        float crankDuration = 3f;
+        float soundLength = 0.813f;
+        int plays = Mathf.FloorToInt(crankDuration / soundLength);
+
+        for (int i = 0; i < plays; i++)
+        {
+            crank.Play();
+            yield return new WaitForSeconds(soundLength);
+        }
+
+        float remainingTime = crankDuration - (plays * soundLength);
+        if (remainingTime > 0)
+        {
+            yield return new WaitForSeconds(remainingTime);
+        }
+
+        RechargeToNextBar();
+        Debug.Log("Crank complete. Battery now: " + flashlightBatteryRemaining.ToString("F1") + "s");
+
+        isCranking = false;
+    }
+
 }
