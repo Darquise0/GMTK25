@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,15 +10,28 @@ public class Enemy : MonoBehaviour
     [SerializeField] public Collider2D lightCollider;
     Vector2 moveDirection;
 
+    // Variables added (yas)
+    [SerializeField] private Collider2D chaseTrigger;
+    private bool isInSpotlightTrigger = false;
+    private bool isInLight = false;
+    private float drainTimer = 0f;
+    public float drainDelay = 1f;
+    private bool isCommittedToChase = false;
+    private Vector3 startPosition;
+
+    public Lights playerLights;
+    public Image healthBarFillImage;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<Collider2D>();
+        startPosition = transform.position;
     }
 
     void Update()
     {
-        if (target && lightCollider != null && enemyCollider != null && !lightCollider.IsTouching(enemyCollider))
+        if (isCommittedToChase && target && lightCollider != null && enemyCollider != null && !lightCollider.IsTouching(enemyCollider))
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
@@ -30,10 +44,81 @@ public class Enemy : MonoBehaviour
         {
             moveDirection = Vector2.zero;
         }
+
+        // Dimming player light logic
+        if (isInSpotlightTrigger && !isInLight && playerLights != null)
+        {
+            drainTimer += Time.deltaTime;
+            if (drainTimer >= drainDelay)
+            {
+                playerLights.DimPlayerLight();
+                drainTimer = 0f;
+            }
+        }
+        else
+        {
+            drainTimer = 0f;
+        }
+
+        // Update health bar
+        if (playerLights != null && healthBarFillImage != null)
+        {
+            float fillAmount = 1f - Mathf.InverseLerp(0f, playerLights.nightPlayerIntensity, playerLights.playerLight.intensity);
+            healthBarFillImage.fillAmount = fillAmount;
+        }
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * movementSpeed;
+    }
+
+    // Trigger detection for spotlight zone
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (chaseTrigger != null && chaseTrigger.IsTouching(other))
+            {
+                Debug.Log("Player entered chase zone");
+                CommitToChase();
+            }
+        }
+
+
+        if (other.CompareTag("PlayerSpotlightTrigger"))
+        {
+            isInSpotlightTrigger = true;
+        }
+
+        if (other.CompareTag("Flashlight"))
+        {
+            isInLight = true;
+        }
+    }
+    public void CommitToChase()
+    {
+        isCommittedToChase = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerSpotlightTrigger"))
+        {
+            isInSpotlightTrigger = false;
+        }
+
+        if (other.CompareTag("Flashlight"))
+        {
+            isInLight = false;
+        }
+    }
+
+    public void ReturnToStart()
+    {
+        transform.position = startPosition;
+        moveDirection = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
+        isCommittedToChase = false; // Reset chase
     }
 }
