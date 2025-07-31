@@ -252,6 +252,7 @@ public class Lights : MonoBehaviour
         flashlight.intensity = 0f;
         flashlightIsOn = false;
         isFlickering = false;
+        flashlightTrigger.enabled = flashlightIsOn;
         UpdateBatteryUI();
     }
 

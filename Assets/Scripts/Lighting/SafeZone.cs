@@ -7,7 +7,6 @@ public class SafeZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("player in");
             Lights lights = other.GetComponent<Lights>();
             if (lights != null)
             {
@@ -17,7 +16,6 @@ public class SafeZone : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            print("enemy in");
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null) enemy.ReturnToStart();
         }
