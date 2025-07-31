@@ -8,6 +8,7 @@ public class Lights : MonoBehaviour
     public Light2D globalLight;
     public Light2D playerLight;
     public Light2D flashlight;
+    public PolygonCollider2D flashlightTrigger;
     public GameObject bar1;
     public GameObject bar2;
     public GameObject bar3;
@@ -48,6 +49,17 @@ public class Lights : MonoBehaviour
     public float crankInterval = 3f;
     bool isCranking = false;
 
+    public float dimRate = 0.1f;
+    public float minPlayerLightIntensity = 0f;
+
+    [HideInInspector] public bool isInSafeZone = false;
+    private float restoreTimer = 0f;
+    public float restoreDelay = 1f; // How often to heal
+    public float restoreAmount = 0.2f; // How much to restore
+    public float maxIntensity = 2f; // Max light level
+
+
+
     void Start()
     {
         UpdateBatteryUI();
@@ -63,6 +75,7 @@ public class Lights : MonoBehaviour
 
     void Update()
     {
+
         if (ambientFlickerCooldown > 0f)
         {
             ambientFlickerCooldown -= Time.deltaTime;
@@ -80,6 +93,7 @@ public class Lights : MonoBehaviour
         {
             click.Play();
             flashlightIsOn = !flashlightIsOn;
+            flashlightTrigger.enabled = flashlightIsOn;
             if (!flashlightIsOn)
             {
                 Debug.Log("Flashlight turned off. Battery remaining: " + flashlightBatteryRemaining.ToString("F1") + "s");
@@ -102,6 +116,11 @@ public class Lights : MonoBehaviour
         {
             StartCoroutine(ForcedFlickerEffect());
             Debug.Log("Forced flicker triggered.");
+        }
+
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            ResetPlayerLight();
         }
 
         if (Mathf.Abs(globalLight.intensity - globalTarget) > 0.01f)
@@ -136,6 +155,22 @@ public class Lights : MonoBehaviour
         {
             flashlight.intensity = (flashlightIsOn && isNight) ? 3f : 0f;
         }
+
+        if (isInSafeZone && playerLight.intensity < maxIntensity)
+        {
+            restoreTimer += Time.deltaTime;
+            if (restoreTimer >= restoreDelay)
+            {
+                playerLight.intensity = Mathf.Min(playerLight.intensity + restoreAmount, maxIntensity);
+                restoreTimer = 0f;
+                Debug.Log("Healing light: " + playerLight.intensity);
+            }
+        }
+        else
+        {
+            restoreTimer = 0f;
+        }
+
         UpdateBatteryUI();
     }
     void UpdateBatteryUI()
@@ -148,6 +183,21 @@ public class Lights : MonoBehaviour
         bar3.SetActive(barCount >= 3);
         bar4.SetActive(barCount >= 4);
     }
+
+    public void RestoreLight(float amount)
+    {
+        if (playerLight != null)
+        {
+            playerLight.intensity = Mathf.Clamp(playerLight.intensity + amount, 0f, nightPlayerIntensity);
+        }
+    }
+
+    public void ResetPlayerLight()
+    {
+        playerLight.intensity = nightPlayerIntensity;
+        Debug.Log("Player light intensity reset.");
+    }
+
 
     public void RechargeToNextBar()
     {
@@ -167,6 +217,14 @@ public class Lights : MonoBehaviour
             UpdateBatteryUI();
         }
     }
+    public void DimPlayerLight()
+    {
+        if (playerLight != null && playerLight.intensity > minPlayerLightIntensity)
+        {
+            playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
+        }
+    }
+
 
     private IEnumerator FlickerOffEffect()
     {
