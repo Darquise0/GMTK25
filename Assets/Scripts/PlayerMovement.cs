@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private const string _lastHorizontal = "LastHorizontal";
     private const string _lastVertical = "LastVertical";
 
+    private bool frozen;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -22,17 +25,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
+        if (!frozen)
+        { 
+            _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
-        _rb.linearVelocity = _movement * _moveSpeed;
+            _rb.linearVelocity = _movement * _moveSpeed;
 
-        _animator.SetFloat(_horizontal, _movement.x);
-        _animator.SetFloat(_vertical, _movement.y);
-
-        if (_movement != Vector2.zero)
-        {
-            _animator.SetFloat(_lastHorizontal, _movement.x);
+            _animator.SetFloat(_horizontal, _movement.x);
             _animator.SetFloat(_vertical, _movement.y);
+
+            if (_movement != Vector2.zero)
+            {
+                _animator.SetFloat(_lastHorizontal, _movement.x);
+                _animator.SetFloat(_vertical, _movement.y);
+            } 
         }
+
+    }
+
+    public void freeze() {
+        frozen = true;
+    }
+
+    public void unfreeze() {
+        frozen = false;
     }
 }

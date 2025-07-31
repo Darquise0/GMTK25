@@ -163,11 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4901ff131c73c640b464a8f6f7a25e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0.2
-  playerPos: {fileID: 1009679962}
+  textSpeed: 0.3
+  player: {fileID: 1009679960}
   dialogueBubblePrefab: {fileID: 2269230171506999261, guid: f35583cdeda58ab4ab936c24de97cb31, type: 3}
   canvas: {fileID: 1318606819}
   dbOffset: {x: 2, y: 2, z: 0}
+  dialTemp: {fileID: 11400000, guid: 88fc7c0c20190604cae03eb02cf40242, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
