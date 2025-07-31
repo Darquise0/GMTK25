@@ -1,13 +1,22 @@
 using TMPro;
 using UnityEngine;
 
-public class JournalManager : MonoBehaviour
+public class JournalManager : MinigameManager
 {
-    public JournalData journalData;
+    JournalData journalData;
 
     public TextMeshProUGUI[] entries = new TextMeshProUGUI[3];
-    void Start()
+
+    new public void startMinigame(ScriptableObject jd)
     {
+        JournalData temp = jd as JournalData;
+        Debug.Log(temp.entries.ToString());
+        prepareEntries(jd as JournalData);
+    }
+
+    void prepareEntries(JournalData newJournalData)
+    {
+        journalData = newJournalData;
         for (int i = 0; i < entries.Length; i++)
         {
             entries[i].text = journalData.entries[i];

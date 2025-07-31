@@ -8,6 +8,7 @@ namespace ClearLeaves
         public GameObject leafPrefab;
         public static int leafCount = 5;
 
+        public void doAwake() { this.Awake(); }
         void Awake()
         {
             for (int i = 0; i < leafCount; i++)

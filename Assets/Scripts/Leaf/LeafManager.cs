@@ -3,14 +3,17 @@ using ClearLeaves;
 
 namespace ClearLeaves
 {
-    public class LeafManager : MonoBehaviour
+    public class LeafManager : MinigameManager
     {
         private int totalLeaves;
+        public LeafSpawner leafSpawner;
 
         void Awake()
         {
             totalLeaves = LeafSpawner.leafCount;
         }
+
+        new public void startMinigame() { this.Awake();  leafSpawner.doAwake(); }
 
         public void LeafCleared()
         {
