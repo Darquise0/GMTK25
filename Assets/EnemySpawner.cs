@@ -26,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator spawnEnemies()
     {
+        spawned[Global.loopCounter] = true;
         foreach (GameObject enemy in enemies[Global.loopCounter].array)
         {
             Debug.Log("Spawned enemy");
@@ -33,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
 
         }
-        spawned[Global.loopCounter] = true;
+        
     }
 
     Vector3 chooseRandomSpawnPoint()
