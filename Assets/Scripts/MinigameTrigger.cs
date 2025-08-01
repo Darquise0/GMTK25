@@ -8,6 +8,10 @@ public class MinigameTrigger : MonoBehaviour
     public GameObject manager;
 
     bool isTouchingPlayer;
+
+    bool isCollected;
+
+    public static int evidenceCount;
     void Update()
     {
         if (isTouchingPlayer && InputManager.Interaction)
@@ -17,7 +21,6 @@ public class MinigameTrigger : MonoBehaviour
             if (data == null)
             {
                 manager.GetComponent<LeafManager>().startMinigame();
-
             }
             else if (data.GetType().Name == "JournalData")
             {
@@ -27,6 +30,7 @@ public class MinigameTrigger : MonoBehaviour
             {
                 manager.GetComponent<WaveManager>().startMinigame(data as WaveData);
             }
+            Destroy(this.gameObject);
         }
     }
 
