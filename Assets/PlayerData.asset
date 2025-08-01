@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   evidenceCount: 0
-  loopCounter: 1
-  playerIntensity: 1.99944
-  flashlightBatteryRemaining: 15.280767
+  loopCounter: 0
+  playerIntensity: 2
+  flashlightBatteryRemaining: 24.921803
   writtenToBefore: 0
