@@ -293,6 +293,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 4101671481704674463}
   waveWidth: 800
   waveHeight: 10
+  waveSpeed: 1
   waveData: {fileID: 11400000, guid: 02d3b9a07fd923442b42866e65f86207, type: 2}
 --- !u!1 &1425688994588873159
 GameObject:
@@ -812,6 +813,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 4006740114522870311}
   waveWidth: 800
   waveHeight: 10
+  waveSpeed: 1
   amplitudeSlider: {fileID: 7554211664162504392}
   wavelengthSlider: {fileID: 6253494597971343388}
   example: {fileID: 0}

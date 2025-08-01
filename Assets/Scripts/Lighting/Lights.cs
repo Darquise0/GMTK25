@@ -33,7 +33,7 @@ public class Lights : MonoBehaviour
     private bool flashlightIsOn = false;
 
     public float flashlightBatteryLife = 30f;
-    private float flashlightBatteryRemaining;
+    [SerializeField]private float flashlightBatteryRemaining;
 
     private bool isFlickering = false;
     private bool isAmbientFlickering = false;
@@ -64,13 +64,11 @@ public class Lights : MonoBehaviour
     {
         UpdateBatteryUI();
         globalLight.intensity = dayGlobalIntensity;
-        playerLight.intensity = dayPlayerIntensity;
+        //playerLight.intensity = dayPlayerIntensity;
         flashlight.intensity = 0f;
 
         globalTarget = dayGlobalIntensity;
         playerTarget = dayPlayerIntensity;
-
-        flashlightBatteryRemaining = flashlightBatteryLife;
     }
 
     void Update()
@@ -336,6 +334,18 @@ public class Lights : MonoBehaviour
         Debug.Log("Crank complete. Battery now: " + flashlightBatteryRemaining.ToString("F1") + "s");
 
         isCranking = false;
+    }
+
+    public void loadInstance(PlayerData playerData)
+    {
+        playerLight.intensity = playerData.playerIntensity;
+
+        flashlightBatteryRemaining = playerData.flashlightBatteryRemaining;
+    }
+
+    public float getFBR()
+    {
+        return this.flashlightBatteryRemaining;
     }
 
 }

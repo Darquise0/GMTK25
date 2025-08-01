@@ -6,7 +6,11 @@ public class WaveDisplay : MonoBehaviour
 {
     public LineRenderer lineRenderer;
     public int waveWidth = 800;
-    public int waveHeight = 10; 
+    public int waveHeight = 10;
+
+    protected float waveSpeed =1f;
+    protected float phase = 0f;
+    
 
     protected void DrawWave(float amplitude, float wavelength)
     {
@@ -14,7 +18,9 @@ public class WaveDisplay : MonoBehaviour
         for (int i = 0; i < lineRenderer.positionCount; i++)
         {
             float x = i / (float)(lineRenderer.positionCount - 1) * waveWidth;
-            float y = Mathf.Sin(x * wavelength * Mathf.PI * 2) * amplitude * waveHeight;
+            //float y = Mathf.Sin(x * wavelength * Mathf.PI * 2) * amplitude * waveHeight;
+
+            float y = Mathf.Sin((x * wavelength + phase) * Mathf.PI * 2)* amplitude * waveHeight;
             lineRenderer.SetPosition(i, new Vector3(x, y, 0));
         }
     }

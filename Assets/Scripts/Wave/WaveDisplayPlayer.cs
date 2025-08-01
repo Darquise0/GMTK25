@@ -10,21 +10,18 @@ public class WaveDisplayPlayer : WaveDisplay
 
     public float currentAmp, currentWL;
 
-    public void RedrawWave()
-    {
-        currentAmp = amplitudeSlider.value / 2;
-        currentWL = wavelengthSlider.value / 500;
-        DrawWave(currentAmp, currentWL);
-    }
-
     public void resetSliders()
     {
         amplitudeSlider.value = 1;
         wavelengthSlider.value = 1;
     }
         
-    void Start()
+    void Update()
     {
-        RedrawWave();
+        phase += Time.deltaTime * waveSpeed;
+
+        currentAmp = amplitudeSlider.value / 2;
+        currentWL = wavelengthSlider.value / 500;
+        DrawWave(currentAmp, currentWL);
     }
 }

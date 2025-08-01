@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8887596089996499192}
   - component: {fileID: 142890788845614688}
   - component: {fileID: 1579041984511986572}
+  - component: {fileID: 8238273014844239822}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -249,6 +250,7 @@ MonoBehaviour:
   nightPlayerIntensity: 2
   transitionDuration: 3
   flashlightBatteryLife: 30
+  flashlightBatteryRemaining: 30
   allowAmbientFlicker: 1
   flickerChancePerSecond: 0.2
   flickerDuration: 0.05
@@ -357,6 +359,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8238273014844239822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822257593814105887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df822246a0b47a14b9771393b21a5921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights: {fileID: 142890788845614688}
+  playerData: {fileID: 11400000, guid: a913df6fd9c95054582d8d4f3261a871, type: 2}
 --- !u!1 &4672456679423011476
 GameObject:
   m_ObjectHideFlags: 0
