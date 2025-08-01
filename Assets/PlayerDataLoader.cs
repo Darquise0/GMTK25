@@ -8,8 +8,10 @@ public class PlayerDataLoader : MonoBehaviour
     void Awake()
     {
         if (playerData.writtenToBefore)
-        { 
+        {
             lights.loadInstance(playerData);
         }
+
+        Global.playerInstance = gameObject;
     }
 }
