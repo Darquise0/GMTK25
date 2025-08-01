@@ -10,13 +10,18 @@ namespace ClearLeaves
 
         public bool isRunning;
 
-        public void startMinigame()
+        private GameObject nextManager;
+        private ScriptableObject data;
+
+        public void startMinigame(ScriptableObject data, GameObject nextManager)
         {
             if (!isRunning)
             {
                 isRunning = true;
                 totalLeaves = LeafSpawner.leafCount;
                 leafSpawner.doAwake();
+                this.data = data;
+                this.nextManager = nextManager;
             }
         }
 
@@ -27,8 +32,18 @@ namespace ClearLeaves
             if (totalLeaves <= 0)
             {
                 isRunning = false;
-                PlayerMovement.unfreeze();
-                this.gameObject.SetActive(false);
+
+                nextManager.SetActive(true);
+                if (data.GetType().Name == "JournalData")
+                {
+                    nextManager.GetComponent<JournalManager>().startMinigame(data as JournalData);
+                }
+                else
+                {
+                    nextManager.GetComponent<WaveManager>().startMinigame(data as WaveData);
+                }
+
+                this.gameObject.SetActive(false); 
             }
         }
     }

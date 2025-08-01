@@ -19,7 +19,7 @@ namespace ClearLeaves
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            leafRect.localScale = Vector3.one * 1.2f;
+            leafRect.localScale = Vector3.one * 2.4f;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -38,7 +38,7 @@ namespace ClearLeaves
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            leafRect.localScale = Vector3.one;
+            leafRect.localScale = Vector3.one * 2;
 
             if (!IsLeafInsidePanel())
             {
@@ -49,7 +49,7 @@ namespace ClearLeaves
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            leafRect.localScale = Vector3.one;
+            leafRect.localScale = Vector3.one *2;
         }
 
         private bool IsLeafInsidePanel()
