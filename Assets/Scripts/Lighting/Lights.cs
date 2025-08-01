@@ -9,6 +9,7 @@ public class Lights : MonoBehaviour
     public Light2D playerLight;
     public Light2D flashlight;
     public PolygonCollider2D flashlightTrigger;
+    public Animator animator;
     public GameObject bar1;
     public GameObject bar2;
     public GameObject bar3;
@@ -92,6 +93,7 @@ public class Lights : MonoBehaviour
             click.Play();
             flashlightIsOn = !flashlightIsOn;
             flashlightTrigger.enabled = flashlightIsOn;
+            animator.SetBool("FlashlightOn", flashlightIsOn);
             if (!flashlightIsOn)
             {
                 Debug.Log("Flashlight turned off. Battery remaining: " + flashlightBatteryRemaining.ToString("F1") + "s");
