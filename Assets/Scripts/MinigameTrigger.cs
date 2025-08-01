@@ -5,6 +5,7 @@ public class MinigameTrigger : MonoBehaviour
 {
     public ScriptableObject data;
 
+    public LeafManager leafManager;
     public GameObject manager;
 
     bool isTouchingPlayer;
@@ -14,20 +15,11 @@ public class MinigameTrigger : MonoBehaviour
     {
         if (isTouchingPlayer && InputManager.Interaction)
         {
-            manager.gameObject.SetActive(true);
+            leafManager.gameObject.SetActive(true);
             PlayerMovement.freeze();
-            if (data == null)
-            {
-                manager.GetComponent<LeafManager>().startMinigame();
-            }
-            else if (data.GetType().Name == "JournalData")
-            {
-                manager.GetComponent<JournalManager>().startMinigame(data as JournalData);
-            }
-            else
-            {
-                manager.GetComponent<WaveManager>().startMinigame(data as WaveData);
-            }
+
+            leafManager.GetComponent<LeafManager>().startMinigame(data, manager);
+
             Destroy(this.gameObject);
         }
     }

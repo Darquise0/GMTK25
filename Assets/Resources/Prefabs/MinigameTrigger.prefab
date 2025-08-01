@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
+  leafManager: {fileID: 0}
   manager: {fileID: 0}
 --- !u!212 &4014905383049825519
 SpriteRenderer:
