@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 5140d287d784f6f48aac437f8eb1f1a6
+guid: 0fcf28caa67209f41a10c3c935b34c4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7252759382433548036
-    second: player_frontidleF-Sheet_0
+      213: 885791702877725382
+    second: player_backidle-Sheet_0
   - first:
-      213: 5056806282518953404
-    second: player_frontidleF-Sheet_1
+      213: 5939795218180321263
+    second: player_backidle-Sheet_1
   - first:
-      213: -8229353458501139812
-    second: player_frontidleF-Sheet_2
+      213: 492409429170533509
+    second: player_backidle-Sheet_2
   - first:
-      213: 5883756260197505256
-    second: player_frontidleF-Sheet_3
-  - first:
-      213: 6828354431053048360
-    second: player_frontidleF-Sheet_4
-  - first:
-      213: 7762011987848911052
-    second: player_frontidleF-Sheet_5
-  - first:
-      213: 1393552656158150611
-    second: player_frontidleF-Sheet_6
-  - first:
-      213: 631317848534249148
-    second: player_frontidleF-Sheet_7
+      213: -1130627254209237177
+    second: player_backidle-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_frontidleF-Sheet_0
+      name: player_backidle-Sheet_0
       rect:
         serializedVersion: 2
         x: 139
@@ -149,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40745574b3af6a460800000000000000
-      internalID: 7252759382433548036
+      spriteID: 6c2e3035cd6fa4c00800000000000000
+      internalID: 885791702877725382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_frontidleF-Sheet_1
+      name: player_backidle-Sheet_1
       rect:
         serializedVersion: 2
         x: 779
@@ -171,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbd718795826d2640800000000000000
-      internalID: 5056806282518953404
+      spriteID: fefa332d7446e6250800000000000000
+      internalID: 5939795218180321263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_frontidleF-Sheet_2
+      name: player_backidle-Sheet_2
       rect:
         serializedVersion: 2
         x: 1419
@@ -193,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9248e661a67bcd80800000000000000
-      internalID: -8229353458501139812
+      spriteID: 58433c554c365d600800000000000000
+      internalID: 492409429170533509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_frontidleF-Sheet_3
+      name: player_backidle-Sheet_3
       rect:
         serializedVersion: 2
         x: 2059
@@ -215,96 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e89d0a252d47a150800000000000000
-      internalID: 5883756260197505256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_frontidleF-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 2699
-        y: 9
-        width: 352
-        height: 602
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82aa1674d2033ce50800000000000000
-      internalID: 6828354431053048360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_frontidleF-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 3339
-        y: 9
-        width: 352
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc8de0e27c438bb60800000000000000
-      internalID: 7762011987848911052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_frontidleF-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 3979
-        y: 9
-        width: 352
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3dfcb16e1c4e65310800000000000000
-      internalID: 1393552656158150611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_frontidleF-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 4619
-        y: 9
-        width: 352
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cbe6f360d34e2c800800000000000000
-      internalID: 631317848534249148
+      spriteID: 74fab7ba0843f40f0800000000000000
+      internalID: -1130627254209237177
       vertices: []
       indices: 
       edges: []
@@ -323,14 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_frontidleF-Sheet_0: 7252759382433548036
-      player_frontidleF-Sheet_1: 5056806282518953404
-      player_frontidleF-Sheet_2: -8229353458501139812
-      player_frontidleF-Sheet_3: 5883756260197505256
-      player_frontidleF-Sheet_4: 6828354431053048360
-      player_frontidleF-Sheet_5: 7762011987848911052
-      player_frontidleF-Sheet_6: 1393552656158150611
-      player_frontidleF-Sheet_7: 631317848534249148
+      player_backidle-Sheet_0: 885791702877725382
+      player_backidle-Sheet_1: 5939795218180321263
+      player_backidle-Sheet_2: 492409429170533509
+      player_backidle-Sheet_3: -1130627254209237177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

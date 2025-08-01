@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: a1812635e5fd5414c9c14a56659f48ee
+guid: 3ac7bd4a22c0c2a4696b70a9413bec5a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7939197079161234552
-    second: player_walk-Sheet_0
+      213: 1171873830175534049
+    second: player_idleF-Sheet_0
   - first:
-      213: 4759368979565057057
-    second: player_walk-Sheet_1
+      213: -2712184173337517492
+    second: player_idleF-Sheet_1
   - first:
-      213: 2627101981033025385
-    second: player_walk-Sheet_2
+      213: -7712936232661531920
+    second: player_idleF-Sheet_2
   - first:
-      213: -5017712988063361957
-    second: player_walk-Sheet_3
+      213: 8799567048841518056
+    second: player_idleF-Sheet_3
   - first:
-      213: 7764196897212826444
-    second: player_walk-Sheet_4
+      213: 8143078462228805392
+    second: player_idleF-Sheet_4
   - first:
-      213: 2234606475637491290
-    second: player_walk-Sheet_5
+      213: 6515962647159519015
+    second: player_idleF-Sheet_5
   - first:
-      213: -7287762787430822832
-    second: player_walk-Sheet_6
+      213: 1187289376713440365
+    second: player_idleF-Sheet_6
   - first:
-      213: 6114839430206254409
-    second: player_walk-Sheet_7
+      213: 4985691785826737763
+    second: player_idleF-Sheet_7
   - first:
-      213: 5983732243177254212
-    second: player_walk-Sheet_8
+      213: -9001853260757990090
+    second: player_idleF-Sheet_8
   - first:
-      213: 7781685437481643480
-    second: player_walk-Sheet_9
+      213: 1040906293941153820
+    second: player_idleF-Sheet_9
   - first:
-      213: -7519175684575158009
-    second: player_walk-Sheet_10
+      213: -8313724526447378390
+    second: player_idleF-Sheet_10
   - first:
-      213: 7856320883792307891
-    second: player_walk-Sheet_11
+      213: 4023995330563335902
+    second: player_idleF-Sheet_11
   - first:
-      213: 254667062589451474
-    second: player_walk-Sheet_12
+      213: -4735149101822108690
+    second: player_idleF-Sheet_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -73,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,12 +149,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_walk-Sheet_0
+      name: player_idleF-Sheet_0
       rect:
         serializedVersion: 2
-        x: 149
+        x: 59
         y: 9
-        width: 362
+        width: 452
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87469390ea1bd2e60800000000000000
-      internalID: 7939197079161234552
+      spriteID: 1eb60392a05534010800000000000000
+      internalID: 1171873830175534049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_1
+      name: player_idleF-Sheet_1
       rect:
         serializedVersion: 2
-        x: 789
+        x: 699
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,19 +186,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1241df5eedcac0240800000000000000
-      internalID: 4759368979565057057
+      spriteID: c42e7c63dd26c5ad0800000000000000
+      internalID: -2712184173337517492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_2
+      name: player_idleF-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1429
+        x: 1339
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +208,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96fc2303557557420800000000000000
-      internalID: 2627101981033025385
+      spriteID: 0f248fc7c5526f490800000000000000
+      internalID: -7712936232661531920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_3
+      name: player_idleF-Sheet_3
       rect:
         serializedVersion: 2
-        x: 2069
+        x: 1979
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -230,19 +230,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b549e915f908d5ab0800000000000000
-      internalID: -5017712988063361957
+      spriteID: 8eb5e6bdb975e1a70800000000000000
+      internalID: 8799567048841518056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_4
+      name: player_idleF-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2709
+        x: 2619
         y: 9
-        width: 362
+        width: 452
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,19 +252,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c438f8801f7ffbb60800000000000000
-      internalID: 7764196897212826444
+      spriteID: 017384fa7b6020170800000000000000
+      internalID: 8143078462228805392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_5
+      name: player_idleF-Sheet_5
       rect:
         serializedVersion: 2
-        x: 3349
+        x: 3259
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -274,19 +274,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a56092900cae20f10800000000000000
-      internalID: 2234606475637491290
+      spriteID: 72738a921895d6a50800000000000000
+      internalID: 6515962647159519015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_6
+      name: player_idleF-Sheet_6
       rect:
         serializedVersion: 2
-        x: 3989
+        x: 3899
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -296,19 +296,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05c00e76b5aacda90800000000000000
-      internalID: -7287762787430822832
+      spriteID: d6c7998c5691a7010800000000000000
+      internalID: 1187289376713440365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_7
+      name: player_idleF-Sheet_7
       rect:
         serializedVersion: 2
-        x: 4629
+        x: 4539
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -318,19 +318,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94deeff50164cd450800000000000000
-      internalID: 6114839430206254409
+      spriteID: 36e19cd834cb03540800000000000000
+      internalID: 4985691785826737763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_8
+      name: player_idleF-Sheet_8
       rect:
         serializedVersion: 2
-        x: 5269
+        x: 5179
         y: 9
-        width: 362
+        width: 452
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,19 +340,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44da1a1a5cc7a0350800000000000000
-      internalID: 5983732243177254212
+      spriteID: 6350458372ef21380800000000000000
+      internalID: -9001853260757990090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_9
+      name: player_idleF-Sheet_9
       rect:
         serializedVersion: 2
-        x: 5909
+        x: 5819
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -362,19 +362,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8dd6cee1da91efb60800000000000000
-      internalID: 7781685437481643480
+      spriteID: c10b4d662ca027e00800000000000000
+      internalID: 1040906293941153820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_10
+      name: player_idleF-Sheet_10
       rect:
         serializedVersion: 2
-        x: 6549
+        x: 6459
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,19 +384,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 701a42d9d8586a790800000000000000
-      internalID: -7519175684575158009
+      spriteID: a20c6a85797bf9c80800000000000000
+      internalID: -8313724526447378390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_11
+      name: player_idleF-Sheet_11
       rect:
         serializedVersion: 2
-        x: 7189
+        x: 7099
         y: 9
-        width: 362
+        width: 452
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -406,19 +406,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b66cef1832470d60800000000000000
-      internalID: 7856320883792307891
+      spriteID: ed6ee00ee6a18d730800000000000000
+      internalID: 4023995330563335902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk-Sheet_12
+      name: player_idleF-Sheet_12
       rect:
         serializedVersion: 2
-        x: 7829
+        x: 7739
         y: 9
-        width: 362
+        width: 452
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -428,8 +428,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2dce2a91852c88300800000000000000
-      internalID: 254667062589451474
+      spriteID: eeb1263dafe594eb0800000000000000
+      internalID: -4735149101822108690
       vertices: []
       indices: 
       edges: []
@@ -448,19 +448,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_walk-Sheet_0: 7939197079161234552
-      player_walk-Sheet_1: 4759368979565057057
-      player_walk-Sheet_10: -7519175684575158009
-      player_walk-Sheet_11: 7856320883792307891
-      player_walk-Sheet_12: 254667062589451474
-      player_walk-Sheet_2: 2627101981033025385
-      player_walk-Sheet_3: -5017712988063361957
-      player_walk-Sheet_4: 7764196897212826444
-      player_walk-Sheet_5: 2234606475637491290
-      player_walk-Sheet_6: -7287762787430822832
-      player_walk-Sheet_7: 6114839430206254409
-      player_walk-Sheet_8: 5983732243177254212
-      player_walk-Sheet_9: 7781685437481643480
+      player_idleF-Sheet_0: 1171873830175534049
+      player_idleF-Sheet_1: -2712184173337517492
+      player_idleF-Sheet_10: -8313724526447378390
+      player_idleF-Sheet_11: 4023995330563335902
+      player_idleF-Sheet_12: -4735149101822108690
+      player_idleF-Sheet_2: -7712936232661531920
+      player_idleF-Sheet_3: 8799567048841518056
+      player_idleF-Sheet_4: 8143078462228805392
+      player_idleF-Sheet_5: 6515962647159519015
+      player_idleF-Sheet_6: 1187289376713440365
+      player_idleF-Sheet_7: 4985691785826737763
+      player_idleF-Sheet_8: -9001853260757990090
+      player_idleF-Sheet_9: 1040906293941153820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
