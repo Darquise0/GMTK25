@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
 
     // Variables added (yas)
     [SerializeField] private Collider2D chaseTrigger;
+    private bool hasMadeDecision = false;
+    private float fleeSpeed = 5f;
+    private bool isConverted = false;
     private bool isInSpotlightTrigger = false;
     private bool isInLight = false;
     private float drainTimer = 0f;
@@ -37,6 +40,11 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (isInLight && !hasMadeDecision)
+        {
+            TryConvertToAnimal();
+        }
+
         if (isCommittedToChase && target && lightCollider != null && enemyCollider != null && !lightCollider.IsTouching(enemyCollider))
         {
             Vector3 direction = (target.position - transform.position).normalized;
@@ -111,6 +119,33 @@ public class Enemy : MonoBehaviour
         {
             isInLight = false;
         }
+    }
+
+    private void TryConvertToAnimal()
+    {
+        hasMadeDecision = true;
+
+        if (Random.value > 0.3f) return;
+
+        isConverted = true;
+
+        string prefabName = Random.value > 0.9f ? "Bunny" : "Deer";
+        GameObject animalPrefab = Resources.Load<GameObject>($"Prefabs/{prefabName}");
+
+        if (animalPrefab == null)
+        {
+            Debug.LogError($"Missing prefab: Resources/Animals/{prefabName}.prefab");
+            return;
+        }
+
+        GameObject animal = Instantiate(animalPrefab, transform.position, Quaternion.identity);
+        AnimalFlee fleeScript = animal.GetComponent<AnimalFlee>();
+        if (fleeScript != null && target != null)
+        {
+            fleeScript.SetFleeTarget(target.position);
+        }
+        
+        Destroy(gameObject); // Remove enemy after conversion
     }
 
     public void ReturnToStart()
