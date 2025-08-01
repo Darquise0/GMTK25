@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour
             moveDirection = Vector2.zero;
         }
 
-        // Dimming player light logic
         if (isInSpotlightTrigger && !isInLight && playerLights != null)
         {
             drainTimer += Time.deltaTime;
@@ -79,7 +78,6 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * movementSpeed;
     }
 
-    // Trigger detection for spotlight zone
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -144,7 +142,7 @@ public class Enemy : MonoBehaviour
             fleeScript.SetFleeTarget(target.position);
         }
         
-        Destroy(gameObject); // Remove enemy after conversion
+        Destroy(gameObject);
     }
 
     public void ReturnToStart()
@@ -152,6 +150,6 @@ public class Enemy : MonoBehaviour
         transform.position = startPosition;
         moveDirection = Vector2.zero;
         rb.linearVelocity = Vector2.zero;
-        isCommittedToChase = false; // Reset chase
+        isCommittedToChase = false;
     }
 }

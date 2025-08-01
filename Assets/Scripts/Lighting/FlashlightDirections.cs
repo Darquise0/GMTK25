@@ -4,12 +4,11 @@ using UnityEngine.InputSystem;
 public class FlashlightDirections : MonoBehaviour
 {
     [Header("Flashlight Settings")]
-    [SerializeField] private Transform flashlight; // The child object that holds the flashlight
-    [SerializeField] private GameObject lightUp; // Light that does not include Player layer
-    [SerializeField] private GameObject lightRegular; // Light that includes Player layer when facing down
+    [SerializeField] private Transform flashlight;
+    [SerializeField] private GameObject lightUp;
+    [SerializeField] private GameObject lightRegular;
     private Lights lightsController;
 
-    // Position offsets relative to the player
     private readonly Vector2 rightOffset = new Vector2(0.615f, -0.127f);
     private readonly Vector2 leftOffset = new Vector2(-0.568f, -0.127f);
     private readonly Vector2 upOffset = new Vector2(0.242f, -0.009f);
@@ -34,7 +33,6 @@ public class FlashlightDirections : MonoBehaviour
             float angle = Mathf.Atan2(inputDir.y, inputDir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
-            // Apply position offset and set correct light
             if (inputDir == Vector2.left)
             {
                 flashlight.localPosition = leftOffset;
@@ -53,14 +51,13 @@ public class FlashlightDirections : MonoBehaviour
             else if (inputDir == Vector2.down)
             {
                 flashlight.localPosition = downOffset;
-                SetFlashlightLayer(true); // Include Player layer when facing down
+                SetFlashlightLayer(true);
             }
         }
     }
 
     private void SetFlashlightLayer(bool includePlayer)
     {
-        // Toggle the correct flashlight GameObject
         if (lightUp != null) lightUp.SetActive(!includePlayer);
         if (lightRegular != null) lightRegular.SetActive(includePlayer);
 
