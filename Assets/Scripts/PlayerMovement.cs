@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+
+        if (Global.playerInstance == null) {Global.playerInstance = this.gameObject;} 
     }
 
     private void Update()

@@ -9,7 +9,8 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        setPosition(new Vector3(0, 0, -1));
+        //setPosition(new Vector3(0, 0, -1));
+        assignToPlayer();
     }
 
     void assignToPlayer()

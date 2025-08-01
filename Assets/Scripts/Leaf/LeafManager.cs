@@ -28,7 +28,6 @@ namespace ClearLeaves
             {
                 isRunning = false;
                 PlayerMovement.unfreeze();
-                MinigameTrigger.evidenceCount++;
                 this.gameObject.SetActive(false);
             }
         }

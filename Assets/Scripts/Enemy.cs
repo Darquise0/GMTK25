@@ -27,6 +27,12 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<Collider2D>();
         startPosition = transform.position;
+
+        GameObject player = Global.playerInstance;
+        target = player.transform;
+        playerLights = player.GetComponent<Lights>();
+        lightCollider = playerLights.playerLight.gameObject.GetComponent<Collider2D>();
+        healthBarFillImage = GameObject.Find("Canvas").transform.GetChild(2).transform.GetChild(2).GetComponent<Image>();
     }
 
     void Update()

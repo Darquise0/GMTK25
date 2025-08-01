@@ -10,8 +10,6 @@ public class MinigameTrigger : MonoBehaviour
     bool isTouchingPlayer;
 
     bool isCollected;
-
-    public static int evidenceCount;
     void Update()
     {
         if (isTouchingPlayer && InputManager.Interaction)
