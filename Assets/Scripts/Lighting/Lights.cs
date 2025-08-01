@@ -54,9 +54,9 @@ public class Lights : MonoBehaviour
 
     [HideInInspector] public bool isInSafeZone = false;
     private float restoreTimer = 0f;
-    public float restoreDelay = 1f; // How often to heal
-    public float restoreAmount = 0.2f; // How much to restore
-    public float maxIntensity = 2f; // Max light level
+    public float restoreDelay = 1f;
+    public float restoreAmount = 0.2f;
+    public float maxIntensity = 2f;
 
 
 
@@ -81,7 +81,7 @@ public class Lights : MonoBehaviour
             ambientFlickerCooldown -= Time.deltaTime;
         }
 
-        if (Keyboard.current.tKey.wasPressedThisFrame)
+        if (Keyboard.current.tKey.wasPressedThisFrame) // for testing day/night do not keep //
         {
             isNight = !isNight;
             globalTarget = isNight ? nightGlobalIntensity : dayGlobalIntensity;
@@ -89,7 +89,7 @@ public class Lights : MonoBehaviour
             t = 0f;
         }
 
-        if (Keyboard.current.fKey.wasPressedThisFrame && flashlightBatteryRemaining > 0f)
+        if (Keyboard.current.fKey.wasPressedThisFrame && flashlightBatteryRemaining > 0f) // flashlight //
         {
             click.Play();
             flashlightIsOn = !flashlightIsOn;
@@ -100,7 +100,7 @@ public class Lights : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.rKey.wasPressedThisFrame)
+        if (Keyboard.current.rKey.wasPressedThisFrame) // crank //
         {
             if (!flashlightIsOn && flashlightBatteryRemaining < flashlightBatteryLife)
             {
@@ -112,16 +112,16 @@ public class Lights : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.gKey.wasPressedThisFrame)
-        {
-            StartCoroutine(ForcedFlickerEffect());
-            Debug.Log("Forced flicker triggered.");
-        }
+        // if (Keyboard.current.gKey.wasPressedThisFrame) // for testing flicker do not keep //
+        // {
+        //     StartCoroutine(ForcedFlickerEffect());
+        //     Debug.Log("Forced flicker triggered.");
+        // }
 
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            ResetPlayerLight();
-        }
+        // if (Keyboard.current.pKey.wasPressedThisFrame) // for testing health do not keep //
+        // {
+        //     ResetPlayerLight();
+        // }
 
         if (Mathf.Abs(globalLight.intensity - globalTarget) > 0.01f)
         {
