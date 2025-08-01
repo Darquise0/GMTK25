@@ -152,10 +152,10 @@ TextureImporter:
       name: player_walk-Sheet_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 38
-        height: 62
+        x: 149
+        y: 9
+        width: 362
+        height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: player_walk-Sheet_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 0
-        width: 38
-        height: 61
+        x: 789
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: player_walk-Sheet_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 0
-        width: 38
-        height: 61
+        x: 1429
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: player_walk-Sheet_3
       rect:
         serializedVersion: 2
-        x: 206
-        y: 0
-        width: 38
-        height: 61
+        x: 2069
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: player_walk-Sheet_4
       rect:
         serializedVersion: 2
-        x: 270
-        y: 0
-        width: 38
-        height: 62
+        x: 2709
+        y: 9
+        width: 362
+        height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +262,10 @@ TextureImporter:
       name: player_walk-Sheet_5
       rect:
         serializedVersion: 2
-        x: 334
-        y: 0
-        width: 38
-        height: 61
+        x: 3349
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,10 +284,10 @@ TextureImporter:
       name: player_walk-Sheet_6
       rect:
         serializedVersion: 2
-        x: 398
-        y: 0
-        width: 38
-        height: 61
+        x: 3989
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: player_walk-Sheet_7
       rect:
         serializedVersion: 2
-        x: 462
-        y: 0
-        width: 38
-        height: 61
+        x: 4629
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: player_walk-Sheet_8
       rect:
         serializedVersion: 2
-        x: 526
-        y: 0
-        width: 38
-        height: 62
+        x: 5269
+        y: 9
+        width: 362
+        height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,10 +350,10 @@ TextureImporter:
       name: player_walk-Sheet_9
       rect:
         serializedVersion: 2
-        x: 590
-        y: 0
-        width: 38
-        height: 61
+        x: 5909
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,10 +372,10 @@ TextureImporter:
       name: player_walk-Sheet_10
       rect:
         serializedVersion: 2
-        x: 654
-        y: 0
-        width: 38
-        height: 61
+        x: 6549
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,10 +394,10 @@ TextureImporter:
       name: player_walk-Sheet_11
       rect:
         serializedVersion: 2
-        x: 718
-        y: 0
-        width: 38
-        height: 61
+        x: 7189
+        y: 9
+        width: 362
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,10 +416,10 @@ TextureImporter:
       name: player_walk-Sheet_12
       rect:
         serializedVersion: 2
-        x: 782
-        y: 0
-        width: 38
-        height: 62
+        x: 7829
+        y: 9
+        width: 362
+        height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

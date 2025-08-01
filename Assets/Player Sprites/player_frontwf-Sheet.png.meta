@@ -1,46 +1,55 @@
 fileFormatVersion: 2
-guid: ed3606d61af7cf0448187de52f891c20
+guid: 5cd023a77b8c09d4bafea7edfde0602e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7237264706608541097
-    second: player_idle-Sheet_0
+      213: 2028765683856102287
+    second: player_frontwf-Sheet_0
   - first:
-      213: -912872288056574188
-    second: player_idle-Sheet_1
+      213: 6887113985590324227
+    second: player_frontwf-Sheet_1
   - first:
-      213: -8668364140519030419
-    second: player_idle-Sheet_2
+      213: 3389916403300730919
+    second: player_frontwf-Sheet_2
   - first:
-      213: -3235424316618293243
-    second: player_idle-Sheet_3
+      213: -8010190672439690900
+    second: player_frontwf-Sheet_3
   - first:
-      213: -3594049017427798359
-    second: player_idle-Sheet_4
+      213: 4887016232305518077
+    second: player_frontwf-Sheet_4
   - first:
-      213: -3662306010867100024
-    second: player_idle-Sheet_5
+      213: -5914993973301080988
+    second: player_frontwf-Sheet_5
   - first:
-      213: 8632922769415171940
-    second: player_idle-Sheet_6
+      213: 1762867701489604727
+    second: player_frontwf-Sheet_6
   - first:
-      213: 8585773629486753147
-    second: player_idle-Sheet_7
+      213: -8298176122773503803
+    second: player_frontwf-Sheet_7
   - first:
-      213: 1728976261692339671
-    second: player_idle-Sheet_8
+      213: -6006401099961678301
+    second: player_frontwf-Sheet_8
   - first:
-      213: 1719753309497771237
-    second: player_idle-Sheet_9
+      213: 2109934073743702387
+    second: player_frontwf-Sheet_9
   - first:
-      213: -4395360926845093072
-    second: player_idle-Sheet_10
+      213: 3421462536196290123
+    second: player_frontwf-Sheet_10
   - first:
-      213: -2929241119986449719
-    second: player_idle-Sheet_11
+      213: -1446963295067891370
+    second: player_frontwf-Sheet_11
   - first:
-      213: -50036483917090781
-    second: player_idle-Sheet_12
+      213: 6626087966272909504
+    second: player_frontwf-Sheet_12
+  - first:
+      213: -5758773592778175816
+    second: player_frontwf-Sheet_13
+  - first:
+      213: -8410238862392912463
+    second: player_frontwf-Sheet_14
+  - first:
+      213: 2324967152116048200
+    second: player_frontwf-Sheet_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -149,12 +158,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_idle-Sheet_0
+      name: player_frontwf-Sheet_0
       rect:
         serializedVersion: 2
-        x: 149
+        x: 139
         y: 9
-        width: 362
+        width: 352
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +173,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75250211812109b90800000000000000
-      internalID: -7237264706608541097
+      spriteID: f83debef3af972c10800000000000000
+      internalID: 2028765683856102287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_1
+      name: player_frontwf-Sheet_1
       rect:
         serializedVersion: 2
-        x: 789
+        x: 779
         y: 9
-        width: 362
+        width: 352
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,19 +195,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41ff6199d73d453f0800000000000000
-      internalID: -912872288056574188
+      spriteID: 30c6cbe2ea1f39f50800000000000000
+      internalID: 6887113985590324227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_2
+      name: player_frontwf-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1429
+        x: 1419
+        y: 0
+        width: 352
+        height: 601
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728820d12076b0f20800000000000000
+      internalID: 3389916403300730919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frontwf-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2059
         y: 9
-        width: 362
+        width: 352
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,41 +239,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6101acbdb8c3b780800000000000000
-      internalID: -8668364140519030419
+      spriteID: c69b512f50616d090800000000000000
+      internalID: -8010190672439690900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_3
+      name: player_frontwf-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2069
+        x: 2699
         y: 9
-        width: 362
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5004e4ed9b67913d0800000000000000
-      internalID: -3235424316618293243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_idle-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 2709
-        y: 9
-        width: 362
+        width: 352
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,19 +261,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a6dfd2f57f5f1ec0800000000000000
-      internalID: -3594049017427798359
+      spriteID: df5632aee5b22d340800000000000000
+      internalID: 4887016232305518077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_5
+      name: player_frontwf-Sheet_5
       rect:
         serializedVersion: 2
-        x: 3349
+        x: 3339
         y: 9
-        width: 362
+        width: 352
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -274,19 +283,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8861d7b3610ec2dc0800000000000000
-      internalID: -3662306010867100024
+      spriteID: 46c00dcf158b9eda0800000000000000
+      internalID: -5914993973301080988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_6
+      name: player_frontwf-Sheet_6
       rect:
         serializedVersion: 2
-        x: 3989
+        x: 3979
+        y: 0
+        width: 352
+        height: 601
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7781c4d95d6f67810800000000000000
+      internalID: 1762867701489604727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frontwf-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4619
         y: 9
-        width: 362
+        width: 352
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -296,41 +327,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46f6f54058d4ec770800000000000000
-      internalID: 8632922769415171940
+      spriteID: 5c0057e28c4f6dc80800000000000000
+      internalID: -8298176122773503803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_7
+      name: player_frontwf-Sheet_8
       rect:
         serializedVersion: 2
-        x: 4629
+        x: 5259
         y: 9
-        width: 362
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b75697b60abc62770800000000000000
-      internalID: 8585773629486753147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_idle-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 5269
-        y: 9
-        width: 362
+        width: 352
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,19 +349,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d5314fdfbe8ef710800000000000000
-      internalID: 1728976261692339671
+      spriteID: 326c44ad50af4aca0800000000000000
+      internalID: -6006401099961678301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_9
+      name: player_frontwf-Sheet_9
       rect:
         serializedVersion: 2
-        x: 5909
+        x: 5899
         y: 9
-        width: 362
+        width: 352
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -362,19 +371,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e4cae9f58acdd710800000000000000
-      internalID: 1719753309497771237
+      spriteID: 3797cf47cddf74d10800000000000000
+      internalID: 2109934073743702387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_10
+      name: player_frontwf-Sheet_10
       rect:
         serializedVersion: 2
-        x: 6549
+        x: 6539
+        y: 0
+        width: 352
+        height: 601
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46794a8c0a7b7f20800000000000000
+      internalID: 3421462536196290123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frontwf-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 7179
         y: 9
-        width: 362
+        width: 352
         height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,41 +415,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03b34cf468a8003c0800000000000000
-      internalID: -4395360926845093072
+      spriteID: 659137aac8a5bebe0800000000000000
+      internalID: -1446963295067891370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_idle-Sheet_11
+      name: player_frontwf-Sheet_12
       rect:
         serializedVersion: 2
-        x: 7189
+        x: 7819
         y: 9
-        width: 362
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c28dbd98be3957d0800000000000000
-      internalID: -2929241119986449719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_idle-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 7829
-        y: 9
-        width: 362
+        width: 352
         height: 602
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -428,8 +437,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 320ff4e351c3e4ff0800000000000000
-      internalID: -50036483917090781
+      spriteID: 0c0ff2816e794fb50800000000000000
+      internalID: 6626087966272909504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frontwf-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 8459
+        y: 9
+        width: 352
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba8e8cbde9b410b0800000000000000
+      internalID: -5758773592778175816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frontwf-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 9099
+        y: 0
+        width: 352
+        height: 601
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b592e26054d84b80800000000000000
+      internalID: -8410238862392912463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frontwf-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 9739
+        y: 9
+        width: 352
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84124508e41f34020800000000000000
+      internalID: 2324967152116048200
       vertices: []
       indices: 
       edges: []
@@ -448,19 +523,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_idle-Sheet_0: -7237264706608541097
-      player_idle-Sheet_1: -912872288056574188
-      player_idle-Sheet_10: -4395360926845093072
-      player_idle-Sheet_11: -2929241119986449719
-      player_idle-Sheet_12: -50036483917090781
-      player_idle-Sheet_2: -8668364140519030419
-      player_idle-Sheet_3: -3235424316618293243
-      player_idle-Sheet_4: -3594049017427798359
-      player_idle-Sheet_5: -3662306010867100024
-      player_idle-Sheet_6: 8632922769415171940
-      player_idle-Sheet_7: 8585773629486753147
-      player_idle-Sheet_8: 1728976261692339671
-      player_idle-Sheet_9: 1719753309497771237
+      player_frontwf-Sheet_0: 2028765683856102287
+      player_frontwf-Sheet_1: 6887113985590324227
+      player_frontwf-Sheet_10: 3421462536196290123
+      player_frontwf-Sheet_11: -1446963295067891370
+      player_frontwf-Sheet_12: 6626087966272909504
+      player_frontwf-Sheet_13: -5758773592778175816
+      player_frontwf-Sheet_14: -8410238862392912463
+      player_frontwf-Sheet_15: 2324967152116048200
+      player_frontwf-Sheet_2: 3389916403300730919
+      player_frontwf-Sheet_3: -8010190672439690900
+      player_frontwf-Sheet_4: 4887016232305518077
+      player_frontwf-Sheet_5: -5914993973301080988
+      player_frontwf-Sheet_6: 1762867701489604727
+      player_frontwf-Sheet_7: -8298176122773503803
+      player_frontwf-Sheet_8: -6006401099961678301
+      player_frontwf-Sheet_9: 2109934073743702387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
