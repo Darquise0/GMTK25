@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     // Variables added (yas)
     [SerializeField] private Collider2D chaseTrigger;
     private bool hasMadeDecision = false;
-    private float fleeSpeed = 5f;
     private bool isConverted = false;
     private bool isInSpotlightTrigger = false;
     private bool isInLight = false;

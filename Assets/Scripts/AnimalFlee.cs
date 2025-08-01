@@ -19,9 +19,10 @@ public class AnimalFlee : MonoBehaviour
         Vector2 fleeDirection = (transform.position - playerPosition).normalized;
         rb.linearVelocity = fleeDirection * speed;
 
-        // Flip sprite based on flee direction
-        if (fleeDirection.x < 0)
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        // Flip sprite visually only
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.flipX = fleeDirection.x < 0;
     }
 
     private void OnBecameInvisible()
