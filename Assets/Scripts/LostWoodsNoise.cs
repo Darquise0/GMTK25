@@ -38,7 +38,7 @@ public class LostWoodsNoise : MonoBehaviour
         float startVolume = source.volume;
         while (timeElapsed < duration)
         {
-            source.volume = Mathf.Lerp(startVolume, 1, timeElapsed / duration);
+            source.volume = Mathf.Lerp(startVolume, 0.5f, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -53,7 +53,7 @@ public class LostWoodsNoise : MonoBehaviour
         float startVolume = source.volume;
         while (timeElapsed < duration)
         {
-            source.volume = Mathf.Lerp(startVolume, 0, timeElapsed / duration);
+            source.volume = Mathf.Lerp(startVolume, 0f, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
