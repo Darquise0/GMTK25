@@ -202,13 +202,14 @@ public class Lights : MonoBehaviour
 
     public void DimPlayerLight()
     {
-        if (!inLight)
+        if (!inLight && !PlayerMovement.frozen)
         {
             playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
         }
         if (playerLight.intensity <= 0f)
         {
-            Instantiate(gameOverPrefab,bar1.transform.parent.transform.parent);
+            Instantiate(gameOverPrefab, bar1.transform.parent.transform.parent);
+            Time.timeScale = 0f;
         }
     }
 
