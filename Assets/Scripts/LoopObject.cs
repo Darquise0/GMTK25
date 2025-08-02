@@ -3,11 +3,11 @@ using UnityEngine;
 public class LoopObject : MonoBehaviour
 {
     public int activeLoopNumber;
-    void Awake()
+    public void Start()
     {
         if (Global.loopCounter != activeLoopNumber)
         {
-            this.gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

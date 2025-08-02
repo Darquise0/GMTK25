@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c529a7b2f62474cb782b86f48da5e1, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: bd26d6c4f7a016047b32b21253ca6259, type: 3}
+  m_Name: Line3
   m_EditorClassIdentifier: 
-  evidenceCount: 0
-  loopCounter: 2
-  playerIntensity: 2
-  flashlightBatteryRemaining: 28.605692
-  playerPos: {x: -10.394885, y: 3.2848709, z: 0}
-  writtenToBefore: 0
+  lines:
+  - Fine I did it
+  - Im the killer

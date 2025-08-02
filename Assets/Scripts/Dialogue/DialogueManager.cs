@@ -5,7 +5,6 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     private string[] lines;
-    private Coroutine isTyping;
     public float textSpeed;
 
     public GameObject target;
@@ -17,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     {
         StartCoroutine(startDialogue(dialogue));
     }
-    IEnumerator startDialogue(DialogueData dialogueData)
+    public IEnumerator startDialogue(DialogueData dialogueData)
     {
         PlayerMovement.freeze();
 
