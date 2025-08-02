@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Vector2 moveDirection;
 
     // Variables added (yas)
-    public AudioSource rustle;
+    public AudioSource breathing;
     [SerializeField] private Collider2D chaseTrigger;
     [HideInInspector] public bool hasMadeDecision = false;
     private Animator animator;
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
 
         if (isTouching && !wasTouching)
         {
-            rustle.Play();
+            breathing.Play();
         }
 
         wasTouching = isTouching;
@@ -153,6 +153,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("PlayerSpotlightTrigger"))
         {
+            breathing.Stop();
             isInSpotlightTrigger = false;
         }
     }

@@ -12,7 +12,7 @@ public class Lights : MonoBehaviour
     public PolygonCollider2D flashlightTrigger;
     public Animator animator;
     public GameObject bar1, bar2, bar3, bar4;
-    public AudioSource flicker, click, crank;
+    public AudioSource flicker, click, crank, whisper;
 
     public float dayGlobalIntensity = 20f;
     public float nightGlobalIntensity = 0.1f;
@@ -74,6 +74,17 @@ public class Lights : MonoBehaviour
 
     void Update()
     {
+        if (playerLight.intensity < 0.6f)
+        {
+            Debug.Log("whispers");
+            whisper.Play();
+        }
+        else
+        {
+            Debug.Log("no whispers");
+            whisper.Stop();
+        }
+        
         if (ambientFlickerCooldown > 0f)
             ambientFlickerCooldown -= Time.deltaTime;
 

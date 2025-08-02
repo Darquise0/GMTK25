@@ -135,7 +135,7 @@ MonoBehaviour:
   movementSpeed: 2
   target: {fileID: 0}
   lightCollider: {fileID: 0}
-  rustle: {fileID: 6140914875608008936}
+  breathing: {fileID: 6140914875608008936}
   chaseTrigger: {fileID: 5444653806625970208}
   hasMadeDecision: 0
   drainDelay: 1
@@ -189,11 +189,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c4c3011f7114b5842b96155e7ea218e1, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9f71c0446919dc74f8ddf127fdcd2759, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.03
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: 0.1
+  m_Pitch: 0.2
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -265,7 +265,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
