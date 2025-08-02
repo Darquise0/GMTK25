@@ -15,5 +15,6 @@ MonoBehaviour:
   evidenceCount: 0
   loopCounter: 0
   playerIntensity: 2
-  flashlightBatteryRemaining: 24.921803
+  flashlightBatteryRemaining: 30
+  playerPos: {x: -10.844734, y: 3.247664, z: 0}
   writtenToBefore: 0

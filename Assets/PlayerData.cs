@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
 
     public float flashlightBatteryRemaining;
 
-    public bool writtenToBefore;
+    public Vector3 playerPos;
 
+    public bool writtenToBefore;
 }
