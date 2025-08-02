@@ -52,11 +52,9 @@ public class Lights : MonoBehaviour
     {
         isNight = true;
         playerTarget = nightPlayerIntensity;
-        playerLight.intensity = nightPlayerIntensity;
 
         UpdateBatteryUI();
         globalLight.intensity = nightGlobalIntensity;
-        flashlightBatteryRemaining = flashlightBatteryLife;
 
         globalTarget = nightGlobalIntensity;
 

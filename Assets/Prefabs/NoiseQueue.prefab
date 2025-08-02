@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 7889417338829883991}
   maxVolume: 0.3
+  fadeDuration: 4
 --- !u!82 &7889417338829883991
 AudioSource:
   m_ObjectHideFlags: 0

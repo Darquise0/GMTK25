@@ -23,6 +23,7 @@ public class TeleporterScene : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "SampleScene") { playerData.playerPos = collision.gameObject.transform.position; }
 
             playerData.writtenToBefore = true;
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
