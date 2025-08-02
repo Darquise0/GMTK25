@@ -9,7 +9,7 @@ public class TeleporterLostWoods : Teleporter
     {
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.transform.position = destination;
+            col.gameObject.transform.position = destination.position;
             mainCam.setPosition(newCameraPos);
         }
     }

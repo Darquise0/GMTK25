@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -9,8 +10,15 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        //setPosition(new Vector3(0, 0, -1));
-        assignToPlayer();
+        if (SceneManager.GetActiveScene().name == "LostWoods")
+        {
+            setPosition(new Vector3(0, 0, -1));
+        }
+        else
+        { 
+            assignToPlayer();
+        }
+        
     }
 
     void assignToPlayer()
