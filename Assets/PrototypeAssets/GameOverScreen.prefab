@@ -735,11 +735,11 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6631846378223239464, guid: f15c72083d6bf0445bc1cc29f1157ebe, type: 3}
+  m_Sprite: {fileID: -5429513670530881332, guid: c7060afb6d90f1a469c08a6c3793d490, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
