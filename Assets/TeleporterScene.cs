@@ -13,8 +13,8 @@ public class TeleporterScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Lights playerLights =collision.gameObject.GetComponent<Lights>();
-            playerData.playerIntensity =  playerLights.playerLight.intensity;
+            Lights playerLights = collision.gameObject.GetComponent<Lights>();
+            playerData.playerIntensity = playerLights.playerLight.intensity;
             playerData.flashlightBatteryRemaining = playerLights.getFBR();
 
             playerData.loopCounter = Global.loopCounter;
@@ -23,7 +23,6 @@ public class TeleporterScene : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "SampleScene") { playerData.playerPos = collision.gameObject.transform.position; }
 
             playerData.writtenToBefore = true;
-            SceneManager.LoadScene(sceneName);
         }
     }
 }
