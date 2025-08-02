@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
 
     private Vector2 _movement;
+    public AudioSource grass;
 
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!frozen)
         {
+            grass.Play();
             _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
             _rb.linearVelocity = _movement * _moveSpeed;
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            grass.Stop();
             _rb.linearVelocity =new Vector2(0f,0f);
         }
     }
