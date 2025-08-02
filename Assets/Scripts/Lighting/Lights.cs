@@ -48,6 +48,8 @@ public class Lights : MonoBehaviour
 
     private Light2D activeFlashlight;
 
+    public GameObject gameOverPrefab;
+
     void Start()
     {
         isNight = true;
@@ -201,6 +203,10 @@ public class Lights : MonoBehaviour
     public void DimPlayerLight()
     {
         playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
+        if (playerLight.intensity <= 0)
+        {
+            Instantiate(gameOverPrefab, bar1.transform.parent.transform.parent);
+        }
     }
 
     public void ResetPlayerLight()
