@@ -8,6 +8,7 @@ public class TeleporterScene : MonoBehaviour
 
     public PlayerData playerData;
 
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -18,6 +19,8 @@ public class TeleporterScene : MonoBehaviour
 
             playerData.loopCounter = Global.loopCounter;
             playerData.evidenceCount = Global.evidenceCount;
+
+            if (SceneManager.GetActiveScene().name == "SampleScene") { playerData.playerPos = collision.gameObject.transform.position; }
 
             playerData.writtenToBefore = true;
             SceneManager.LoadScene(sceneName);
