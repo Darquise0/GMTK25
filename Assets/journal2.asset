@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236ff88619537c6498b3815ecc47fb59, type: 3}
+  m_Name: journal2
+  m_EditorClassIdentifier: 
+  entries:
+  - June 30th \n We got lost, by we found our way back to camp he wasn't with me.
+  - June 30th \n The view from up there was so,so beautiful... but the earth gave
+    out from under him, he fell there was nothing I could do.
+  - June 30th \n I brought him there I didn't mean to it all just happened \n I still
+    see him sometimes.
+  contradictionIndex: 3
