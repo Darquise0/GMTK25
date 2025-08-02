@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evidenceCount: 0
   loopCounter: 0
-  playerIntensity: 1.2999998
-  flashlightBatteryRemaining: 10.594226
+  playerIntensity: 2
+  flashlightBatteryRemaining: 30
   playerPos: {x: -10.456758, y: 3.2306275, z: 0}
-  writtenToBefore: 1
+  writtenToBefore: 0
