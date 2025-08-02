@@ -354,6 +354,7 @@ MonoBehaviour:
   restoreDelay: 1
   restoreAmount: 0.2
   maxIntensity: 2
+  gameOverPrefab: {fileID: 8853250817528109465, guid: 001de815340b31546a8058f91f6e1cef, type: 3}
 --- !u!82 &1579041984511986572
 AudioSource:
   m_ObjectHideFlags: 0

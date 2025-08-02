@@ -7,6 +7,7 @@ public class LostWoodsNoise : MonoBehaviour
     private Coroutine fadeInCo;
 
     [SerializeField] private float maxVolume;
+    [SerializeField] private float fadeDuration;
     void Start()
     {
         source.Play();
@@ -34,8 +35,8 @@ public class LostWoodsNoise : MonoBehaviour
     {
         float timeElapsed = 0f;
 
-        float duration = 5f;
-        duration = 5f - duration * source.volume;
+        float duration = fadeDuration;
+        duration = duration - duration * source.volume;
 
         float startVolume = source.volume;
         while (timeElapsed < duration)
@@ -49,8 +50,8 @@ public class LostWoodsNoise : MonoBehaviour
     IEnumerator FadeOut()
     {
         float timeElapsed = 0f;
-        float duration = 5f;
-        duration = 5f - duration * (1-source.volume);
+        float duration = fadeDuration;
+        duration = duration - duration * (1-source.volume);
 
         float startVolume = source.volume;
         while (timeElapsed < duration)
