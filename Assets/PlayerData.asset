@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   evidenceCount: 0
-  loopCounter: 2
-  playerIntensity: 2
-  flashlightBatteryRemaining: 28.605692
-  playerPos: {x: -10.394885, y: 3.2848709, z: 0}
+  loopCounter: 0
+  playerIntensity: 0.8999995
+  flashlightBatteryRemaining: 30
+  playerPos: {x: -10.222088, y: 3.4499533, z: 0}
   writtenToBefore: 0
