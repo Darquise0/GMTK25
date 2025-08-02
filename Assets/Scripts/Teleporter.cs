@@ -2,13 +2,23 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    public Vector2 destination;
+    public Transform destination;
+    [SerializeField] protected bool isLR, isUD;
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.transform.position = destination;
+            Transform player = col.gameObject.transform;
+            if (isLR)
+            {
+                player.position = new Vector3(destination.position.x,player.position.y,0);
+            }
+            else if (isUD)
+            {
+                player.position = new Vector3(player.position.x,destination.position.y,0);
+            }
+            
         }
     }
 }

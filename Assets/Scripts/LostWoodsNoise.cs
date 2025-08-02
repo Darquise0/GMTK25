@@ -5,6 +5,8 @@ public class LostWoodsNoise : MonoBehaviour
 {
     public AudioSource source;
     private Coroutine fadeInCo;
+
+    [SerializeField] private float maxVolume;
     void Start()
     {
         source.Play();
@@ -38,7 +40,7 @@ public class LostWoodsNoise : MonoBehaviour
         float startVolume = source.volume;
         while (timeElapsed < duration)
         {
-            source.volume = Mathf.Lerp(startVolume, 0.5f, timeElapsed / duration);
+            source.volume = Mathf.Lerp(startVolume, maxVolume, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

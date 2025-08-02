@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5339161415328085913}
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1662321991
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -917170703229810770, guid: c521052d5463fe64eada79aace5b0bb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -325,10 +325,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalLight: {fileID: 0}
   playerLight: {fileID: 4199635000920795231}
-  upFlashlight: {fileID: 0}
-  regularFlashlight: {fileID: 0}
+  upFlashlight: {fileID: 8544403542597886149}
+  regularFlashlight: {fileID: 2069093760267713393}
   flashlightTrigger: {fileID: 3966908387504741087}
-  animator: {fileID: 0}
+  animator: {fileID: 7358072203567972279}
   bar1: {fileID: 0}
   bar2: {fileID: 0}
   bar3: {fileID: 0}
@@ -336,8 +336,8 @@ MonoBehaviour:
   flicker: {fileID: 5536110691320894881}
   click: {fileID: 7794470021563571917}
   crank: {fileID: 1579041984511986572}
-  dayGlobalIntensity: 35
-  nightGlobalIntensity: 0.2
+  dayGlobalIntensity: 20
+  nightGlobalIntensity: 0.1
   dayPlayerIntensity: 0
   nightPlayerIntensity: 2
   transitionDuration: 3
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.639
   m_Color: {r: 0.8490566, g: 0.82326764, b: 0.37112844, a: 1}
-  m_Intensity: 0
+  m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 0000000047051563dbe64117
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 3
+  m_PointLightOuterRadius: 1.8
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -927,9 +927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc34e02207eb08d4f9d9e20471597c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 0}
-  lightUp: {fileID: 0}
-  lightRegular: {fileID: 0}
+  flashlight: {fileID: 5339161415328085913}
+  lightUp: {fileID: 7671102015179019977}
+  lightRegular: {fileID: 99295805383643103}
 --- !u!82 &5536110691320894881
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 7175520213436330570}
   m_Layer: 0
   m_Name: Killbox
-  m_TagString: Untagged
+  m_TagString: Flashlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
