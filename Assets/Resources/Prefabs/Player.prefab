@@ -341,6 +341,7 @@ MonoBehaviour:
   dayPlayerIntensity: 0
   nightPlayerIntensity: 2
   transitionDuration: 3
+  inLight: 0
   flashlightBatteryLife: 30
   flashlightBatteryRemaining: 30
   allowAmbientFlicker: 1
