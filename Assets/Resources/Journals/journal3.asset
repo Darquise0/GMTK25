@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236ff88619537c6498b3815ecc47fb59, type: 3}
+  m_Name: journal3
+  m_EditorClassIdentifier: 
+  entries:
+  - June 30th \n It was me who couldn't find peace.
+  - June 30th \n I still see him in the trees, I hear him in the wind. He's gonna
+    drag me down with him.
+  - June 30th \n LET ME GO \n LET ME GO \n LET ME GO \n LET ME GO \n LET ME GO \n
+    LET ME GO
+  contradictionIndex: 1
