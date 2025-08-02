@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!frozen)
         {
-            grass.Play();
             _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
             _rb.linearVelocity = _movement * _moveSpeed;
@@ -38,14 +37,22 @@ public class PlayerMovement : MonoBehaviour
 
             if (_movement != Vector2.zero)
             {
+                if (!grass.isPlaying)
+                {
+                    grass.Play();
+                }
                 _animator.SetFloat(_lastHorizontal, _movement.x);
                 _animator.SetFloat(_lastVertical, _movement.y);
+            }
+            else
+            {
+                if (grass.isPlaying)
+                    grass.Stop();
             }
         }
         else
         {
-            grass.Stop();
-            _rb.linearVelocity =new Vector2(0f,0f);
+            _rb.linearVelocity = new Vector2(0f, 0f);
         }
     }
 
