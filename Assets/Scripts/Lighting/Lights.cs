@@ -14,8 +14,8 @@ public class Lights : MonoBehaviour
     public GameObject bar1, bar2, bar3, bar4;
     public AudioSource flicker, click, crank;
 
-    public float dayGlobalIntensity = 35f;
-    public float nightGlobalIntensity = 0.2f;
+    public float dayGlobalIntensity = 20f;
+    public float nightGlobalIntensity = 0.1f;
     public float dayPlayerIntensity = 0f;
     public float nightPlayerIntensity = 2f;
     public float transitionDuration = 3f;
@@ -37,7 +37,6 @@ public class Lights : MonoBehaviour
     private float ambientFlickerCooldown = 0f;
     public float ambientFlickerDelay = 10f;
     public float crankInterval = 3f;
-    bool isCranking = false;
 
     public float dimRate = 0.1f;
     public float minPlayerLightIntensity = 0f;
@@ -51,13 +50,25 @@ public class Lights : MonoBehaviour
 
     void Start()
     {
+        isNight = true;
+        playerTarget = nightPlayerIntensity;
+        playerLight.intensity = nightPlayerIntensity;
+
         UpdateBatteryUI();
-        globalLight.intensity = dayGlobalIntensity;
+        globalLight.intensity = nightGlobalIntensity;
         flashlightBatteryRemaining = flashlightBatteryLife;
 
-        globalTarget = dayGlobalIntensity;
-        playerTarget = dayPlayerIntensity;
+        globalTarget = nightGlobalIntensity;
 
+        flashlightIsOn = false;
+        if (animator != null)
+        {
+            animator.SetBool("FlashlightOn", false);
+        }
+        if (flashlightTrigger != null)
+        {
+            flashlightTrigger.enabled = false;
+        }
         SetDirectionDown(false);
     }
 
@@ -70,7 +81,7 @@ public class Lights : MonoBehaviour
         {
             isNight = !isNight;
             globalTarget = isNight ? nightGlobalIntensity : dayGlobalIntensity;
-            playerTarget = isNight ? nightPlayerIntensity : dayPlayerIntensity;
+            // playerTarget = isNight ? nightPlayerIntensity : dayPlayerIntensity;
             t = 0f;
         }
 
@@ -87,6 +98,11 @@ public class Lights : MonoBehaviour
         {
             if (!flashlightIsOn && flashlightBatteryRemaining < flashlightBatteryLife)
                 StartCoroutine(CrankRecharge());
+        }
+
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            playerLight.intensity = nightPlayerIntensity;
         }
 
         if (Mathf.Abs(globalLight.intensity - globalTarget) > 0.01f)
@@ -218,6 +234,7 @@ public class Lights : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
 
+        animator.SetBool("FlashlightOn", false);
         activeFlashlight.intensity = 0f;
         flashlightIsOn = false;
         flashlightTrigger.enabled = false;
@@ -247,7 +264,6 @@ public class Lights : MonoBehaviour
 
     private IEnumerator CrankRecharge()
     {
-        isCranking = true;
         float crankDuration = 3f;
         float soundLength = 0.813f;
         int plays = Mathf.FloorToInt(crankDuration / soundLength);
@@ -263,6 +279,5 @@ public class Lights : MonoBehaviour
             yield return new WaitForSeconds(remaining);
 
         RechargeToNextBar();
-        isCranking = false;
     }
 }

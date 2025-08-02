@@ -44,11 +44,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: GroundObjects
+    uniqueID: 3889616195
+    locked: 0
   - name: Ground
     uniqueID: 390194907
     locked: 0
   - name: Player
     uniqueID: 1662321991
+    locked: 0
+  - name: Objects
+    uniqueID: 2603701217
     locked: 0
   - name: Trees
     uniqueID: 2521587113

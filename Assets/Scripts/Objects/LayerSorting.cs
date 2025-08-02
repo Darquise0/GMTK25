@@ -6,38 +6,57 @@ public class LayerSorting : MonoBehaviour
     public string playerTag = "Player";
 
     public float cutoffY = -1f;
-    public string layerAbovePlayer = "Tree";
+    public string layerAbovePlayer = "Trees";
     public string layerBelowPlayer = "Ground";
 
-    private Transform playerInRange = null;
+    public bool isOOB = false;
+
+    private Transform player;
+
+    void Start()
+    {
+        if (isOOB)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+            if (playerObj != null)
+                player = playerObj.transform;
+        }
+    }
 
     void Update()
     {
-        if (playerInRange == null || treeRenderer == null) return;
+        if (treeRenderer == null) return;
+        if (isOOB)
+        {
+            if (player == null) return;
 
-        if (playerInRange.position.y > transform.position.y + cutoffY)
-        {
-            treeRenderer.sortingLayerName = layerAbovePlayer;
+            if (player.position.y > transform.position.y + cutoffY)
+                treeRenderer.sortingLayerName = layerAbovePlayer;
+            else
+                treeRenderer.sortingLayerName = layerBelowPlayer;
         }
-        else
+        else if (player != null)
         {
-            treeRenderer.sortingLayerName = layerBelowPlayer;
+            if (player.position.y > transform.position.y + cutoffY)
+                treeRenderer.sortingLayerName = layerAbovePlayer;
+            else
+                treeRenderer.sortingLayerName = layerBelowPlayer;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(playerTag))
+        if (!isOOB && other.CompareTag(playerTag))
         {
-            playerInRange = other.transform;
+            player = other.transform;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(playerTag) && other.transform == playerInRange)
+        if (!isOOB && other.CompareTag(playerTag) && other.transform == player)
         {
-            playerInRange = null;
+            player = null;
         }
     }
 }

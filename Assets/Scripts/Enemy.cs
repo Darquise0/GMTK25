@@ -11,9 +11,10 @@ public class Enemy : MonoBehaviour
     Vector2 moveDirection;
 
     // Variables added (yas)
+    public AudioSource rustle;
     [SerializeField] private Collider2D chaseTrigger;
     private bool hasMadeDecision = false;
-    private bool isConverted = false;
+    private bool wasTouching = false;
     private bool isInSpotlightTrigger = false;
     private bool isInLight = false;
     private float drainTimer = 0f;
@@ -39,10 +40,14 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (isInLight && !hasMadeDecision)
+        bool isTouching = lightCollider.IsTouching(enemyCollider);
+
+        if (isTouching && !wasTouching)
         {
-            TryConvertToAnimal();
+            rustle.Play();
         }
+
+        wasTouching = isTouching;
 
         if (isCommittedToChase && target && lightCollider != null && enemyCollider != null && !lightCollider.IsTouching(enemyCollider))
         {
@@ -80,6 +85,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (lightCollider.IsTouching(enemyCollider) && !hasMadeDecision)
+        {
+            Debug.Log("Entered flashlight, trying conversion");
+            TryConvertToAnimal();
+        }
+
         if (other.CompareTag("Player"))
         {
             if (chaseTrigger != null && chaseTrigger.IsTouching(other))
@@ -95,9 +106,14 @@ public class Enemy : MonoBehaviour
             isInSpotlightTrigger = true;
         }
 
-        if (other.CompareTag("Flashlight"))
+        isInLight = false;
+
+        if (lightCollider != null && enemyCollider != null)
         {
-            isInLight = true;
+            if (lightCollider.CompareTag("Flashlight") && lightCollider.IsTouching(enemyCollider))
+            {
+                isInLight = true;
+            }
         }
     }
     public void CommitToChase()
@@ -111,20 +127,15 @@ public class Enemy : MonoBehaviour
         {
             isInSpotlightTrigger = false;
         }
-
-        if (other.CompareTag("Flashlight"))
-        {
-            isInLight = false;
-        }
     }
 
     private void TryConvertToAnimal()
     {
         hasMadeDecision = true;
 
-        if (Random.value > 0.3f) return;
+        if (Random.value > 0.4f) return;
 
-        isConverted = true;
+        Debug.Log("converted");
 
         string prefabName = Random.value > 0.9f ? "Bunny" : "Deer";
         GameObject animalPrefab = Resources.Load<GameObject>($"Prefabs/{prefabName}");

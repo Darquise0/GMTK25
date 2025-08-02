@@ -16,12 +16,14 @@ public class AnimalFlee : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        Vector2 fleeDirection = (transform.position - playerPosition).normalized;
+        float directionX = Mathf.Sign(transform.position.x - playerPosition.x);
+        Vector2 fleeDirection = new Vector2(directionX, 0f);
+
         rb.linearVelocity = fleeDirection * speed;
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null)
-            sr.flipX = fleeDirection.x < 0;
+            sr.flipX = directionX < 0;
     }
 
     private void OnBecameInvisible()
