@@ -47,12 +47,27 @@ public class Combat : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            SpriteRenderer sr = other.GetComponentInChildren<SpriteRenderer>();
-            if (sr != null)
-                sr.enabled = false;
+            Enemy enemyScript = other.GetComponent<Enemy>();
+            Lights lights = GetComponent<Lights>();
+            if (enemyScript != null && lights != null)
+            {
+                if (!enemyScript.hasMadeDecision)
+                {
+                    enemyScript.TryConvertToAnimal();
+                }
+
+                SpriteRenderer sr = other.GetComponentInChildren<SpriteRenderer>();
+                if (sr != null)
+                {
+                    sr.enabled = false;
+                    lights.inLight = true;
+                }
+            }
 
             if (!enemiesInLight.ContainsKey(other.gameObject))
+            {
                 enemiesInLight.Add(other.gameObject, 0f);
+            }
         }
     }
 
@@ -60,9 +75,13 @@ public class Combat : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            Lights lights = GetComponent<Lights>();
             SpriteRenderer sr = other.GetComponentInChildren<SpriteRenderer>();
-            if (sr != null)
+            if (sr != null && lights != null)
+            {
                 sr.enabled = true;
+                lights.inLight = false;
+            }
 
             enemiesInLight.Remove(other.gameObject);
         }

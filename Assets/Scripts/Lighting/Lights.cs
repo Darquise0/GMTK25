@@ -19,7 +19,7 @@ public class Lights : MonoBehaviour
     public float dayPlayerIntensity = 0f;
     public float nightPlayerIntensity = 2f;
     public float transitionDuration = 3f;
-
+    [HideInInspector] public bool inLight = false;
     private float t = 0f;
     private float globalTarget;
     private float playerTarget;
@@ -38,7 +38,7 @@ public class Lights : MonoBehaviour
     public float ambientFlickerDelay = 10f;
     public float crankInterval = 3f;
 
-    public float dimRate = 0.1f;
+    public float dimRate = 0.2f;
     public float minPlayerLightIntensity = 0f;
     [HideInInspector] public bool isInSafeZone = false;
     private float restoreTimer = 0f;
@@ -202,7 +202,10 @@ public class Lights : MonoBehaviour
 
     public void DimPlayerLight()
     {
-        playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
+        if (!inLight)
+        {
+            playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
+        }
     }
 
     public void ResetPlayerLight()

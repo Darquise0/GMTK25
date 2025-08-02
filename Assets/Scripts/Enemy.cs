@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,9 @@ public class Enemy : MonoBehaviour
     // Variables added (yas)
     public AudioSource rustle;
     [SerializeField] private Collider2D chaseTrigger;
-    private bool hasMadeDecision = false;
+    [HideInInspector] public bool hasMadeDecision = false;
+    private Animator animator;
+    private string prefabType;
     private bool wasTouching = false;
     private bool isInSpotlightTrigger = false;
     private bool isInLight = false;
@@ -27,19 +30,44 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<Collider2D>();
         startPosition = transform.position;
+
+        prefabType = Random.value > 0.5f ? "Bunny" : "Deer";
+        if (prefabType == "Bunny")
+        {
+            animator.SetBool("isBunny", true);
+        }
 
         GameObject player = Global.playerInstance;
         target = player.transform;
         playerLights = player.GetComponent<Lights>();
         lightCollider = playerLights.playerLight.gameObject.GetComponent<Collider2D>();
         healthBarFillImage = GameObject.Find("Canvas").transform.GetChild(2).transform.GetChild(2).GetComponent<Image>();
+        if (target != null)
+        {
+            animator.SetBool("isRight", target.position.x > transform.position.x);
+        }
     }
 
     void Update()
     {
+        // if (!hasMadeDecision && hasConverted)
+        // {
+        //     Debug.Log("Trying conversion from Update");
+        //     TryConvertToAnimal();
+        // }
+
+        bool isMoving = moveDirection != Vector2.zero;
+        animator.SetBool("isMoving", isMoving);
+
+        if (isMoving)
+        {
+            animator.SetBool("isRight", moveDirection.x > 0f);
+        }
+
         bool isTouching = lightCollider.IsTouching(enemyCollider);
 
         if (isTouching && !wasTouching)
@@ -85,11 +113,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (lightCollider.IsTouching(enemyCollider) && !hasMadeDecision)
-        {
-            Debug.Log("Entered flashlight, trying conversion");
-            TryConvertToAnimal();
-        }
+        // if (lightCollider.IsTouching(enemyCollider) && !hasMadeDecision)
+        // {
+        //     Debug.Log("Entered flashlight, trying conversion");
+        //     TryConvertToAnimal();
+        // }
 
         if (other.CompareTag("Player"))
         {
@@ -129,15 +157,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void TryConvertToAnimal()
+    public void TryConvertToAnimal()
     {
         hasMadeDecision = true;
 
-        if (Random.value > 0.4f) return;
+        if (Random.value > 0.3f) return;
 
         Debug.Log("converted");
 
-        string prefabName = Random.value > 0.9f ? "Bunny" : "Deer";
+        string prefabName = prefabType;
         GameObject animalPrefab = Resources.Load<GameObject>($"Prefabs/{prefabName}");
 
         if (animalPrefab == null)
