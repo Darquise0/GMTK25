@@ -3,7 +3,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     public Transform destination;
-    [SerializeField] private bool isLR, isUD;
+    [SerializeField] protected bool isLR, isUD;
 
     void OnTriggerEnter2D(Collider2D col)
     {
