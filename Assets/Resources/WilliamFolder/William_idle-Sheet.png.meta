@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: fde2938511c9ee14ca5cbde28abba944
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -69647985609793801
+    second: William_idle-Sheet_0
+  - first:
+      213: 47764799591851282
+    second: William_idle-Sheet_1
+  - first:
+      213: -8122627185950088943
+    second: William_idle-Sheet_2
+  - first:
+      213: 4566100473477795791
+    second: William_idle-Sheet_3
+  - first:
+      213: 2901752144573461465
+    second: William_idle-Sheet_4
+  - first:
+      213: -997095018302236443
+    second: William_idle-Sheet_5
+  - first:
+      213: -5891634218207743880
+    second: William_idle-Sheet_6
+  - first:
+      213: -6897686235655418777
+    second: William_idle-Sheet_7
+  - first:
+      213: 5636440876631386892
+    second: William_idle-Sheet_8
+  - first:
+      213: 7604213894003062568
+    second: William_idle-Sheet_9
+  - first:
+      213: 8598600585577001441
+    second: William_idle-Sheet_10
+  - first:
+      213: -3194592189087846065
+    second: William_idle-Sheet_11
+  - first:
+      213: 7634280404891879224
+    second: William_idle-Sheet_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: William_idle-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 9
+        width: 362
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe186ea68f880ff0800000000000000
+      internalID: -69647985609793801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215a07805d1b9a000800000000000000
+      internalID: 47764799591851282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111a3822c91a64f80800000000000000
+      internalID: -8122627185950088943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf036a303c0e5f30800000000000000
+      internalID: 4566100473477795791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 9
+        width: 362
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d3778b8338154820800000000000000
+      internalID: 2901752144573461465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3359
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e898ca1d5b9922f0800000000000000
+      internalID: -997095018302236443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870f03dc4e5bc3ea0800000000000000
+      internalID: -5891634218207743880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4639
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c48a70aee7640a0800000000000000
+      internalID: -6897686235655418777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 5279
+        y: 9
+        width: 362
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0bea193d19a83e40800000000000000
+      internalID: 5636440876631386892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 5919
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 827742c6f38978960800000000000000
+      internalID: 7604213894003062568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6559
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e178ccdcad545770800000000000000
+      internalID: 8598600585577001441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 7199
+        y: 9
+        width: 362
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f417e2764578aa3d0800000000000000
+      internalID: -3194592189087846065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_idle-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 7839
+        y: 9
+        width: 362
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8374e41849962f960800000000000000
+      internalID: 7634280404891879224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      William_idle-Sheet_0: -69647985609793801
+      William_idle-Sheet_1: 47764799591851282
+      William_idle-Sheet_10: 8598600585577001441
+      William_idle-Sheet_11: -3194592189087846065
+      William_idle-Sheet_12: 7634280404891879224
+      William_idle-Sheet_2: -8122627185950088943
+      William_idle-Sheet_3: 4566100473477795791
+      William_idle-Sheet_4: 2901752144573461465
+      William_idle-Sheet_5: -997095018302236443
+      William_idle-Sheet_6: -5891634218207743880
+      William_idle-Sheet_7: -6897686235655418777
+      William_idle-Sheet_8: 5636440876631386892
+      William_idle-Sheet_9: 7604213894003062568
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
