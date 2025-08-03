@@ -1,4 +1,5 @@
 using ClearLeaves;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class MinigameTrigger : MonoBehaviour
@@ -7,8 +8,6 @@ public class MinigameTrigger : MonoBehaviour
 
     public LeafManager leafManager;
     public GameObject manager;
-
-    bool isCollected;
 
     Trigger trigger;
 
@@ -20,10 +19,11 @@ public class MinigameTrigger : MonoBehaviour
     {
         if (trigger.isTouchingPlayer() && InputManager.Interaction)
         {
+
             leafManager.gameObject.SetActive(true);
             PlayerMovement.freeze();
 
-            leafManager.GetComponent<LeafManager>().startMinigame(data, manager);
+            leafManager.startMinigame(data, manager);
 
             Destroy(this.gameObject);
         }

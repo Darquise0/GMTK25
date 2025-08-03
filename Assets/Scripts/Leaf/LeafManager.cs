@@ -1,5 +1,5 @@
 using UnityEngine;
-using ClearLeaves;
+using UnityEngine.UI;
 
 namespace ClearLeaves
 {
@@ -13,10 +13,21 @@ namespace ClearLeaves
         private GameObject nextManager;
         private ScriptableObject data;
 
+        public Sprite radioSprite, journalSprite;
+
         public void startMinigame(ScriptableObject data, GameObject nextManager)
         {
             if (!isRunning)
             {
+                Image imagee = gameObject.transform.GetChild(0).GetComponent<Image>();
+                if (data.GetType().Name == "JournalData")
+                {
+                    imagee.sprite = journalSprite;
+                }
+                else
+                {
+                    imagee.sprite = radioSprite;
+                }
                 isRunning = true;
                 totalLeaves = LeafSpawner.leafCount;
                 leafSpawner.doAwake();
