@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    void Start()
+    {
+        PlayerMovement.frozen = false;
+    }
+
     private void Update()
     {
         if (!frozen)
