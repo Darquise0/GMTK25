@@ -1,5 +1,4 @@
 using ClearLeaves;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class MinigameTrigger : MonoBehaviour
