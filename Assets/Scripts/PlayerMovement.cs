@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        PlayerMovement.frozen = false;
     }
 
     void Start()

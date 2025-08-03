@@ -41,9 +41,8 @@ public class Cutscene1 : Cutscene
             dialogueManager.target = targets[i];
             yield return StartCoroutine(dialogueManager.startDialogue(dialogues[i]));
         }
+        PlayerMovement.unfreeze();
         yield return StartCoroutine(moveUp());
-        
-        
         
     }
 

@@ -14,7 +14,7 @@ public class Global : MonoBehaviour
 
     void Awake()
     {
-        if (playerData.writtenToBefore)
+        if (playerData != null && playerData.writtenToBefore)
         {
             loopCounter = playerData.loopCounter;
             evidenceCount = playerData.evidenceCount;
