@@ -10,18 +10,21 @@ public class Global : MonoBehaviour
 
     public static PlayerData playerData;
 
+    public static bool visitedLW;
+
     void Awake()
     {
         if (playerData.writtenToBefore)
         {
             loopCounter = playerData.loopCounter;
             evidenceCount = playerData.evidenceCount;
+            visitedLW = playerData.visitedLostWoods;
         }
     }
 
     public static void save()
-    { 
-        playerData= Resources.Load<PlayerData>("PlayerData");
+    {
+        playerData = Resources.Load<PlayerData>("PlayerData");
         Lights playerLights = playerInstance.GetComponent<Lights>();
         playerData.playerIntensity = playerLights.playerLight.intensity;
         playerData.flashlightBatteryRemaining = playerLights.getFBR();
@@ -32,5 +35,6 @@ public class Global : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "SampleScene") { playerData.playerPos = playerInstance.transform.position; }
 
         playerData.writtenToBefore = true;
+        playerData.visitedLostWoods = true;
     }
 }
