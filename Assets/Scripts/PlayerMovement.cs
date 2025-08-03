@@ -21,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private const string _lastHorizontal = "LastHorizontal";
     private const string _lastVertical = "LastVertical";
 
-    public static bool frozen;
+    private float footstepCooldown = 0f;
+    private float footstepGracePeriod = 0.5f;
+
+    static bool frozen;
 
     private void Awake()
     {
@@ -42,13 +45,16 @@ public class PlayerMovement : MonoBehaviour
             if (_movement != Vector2.zero)
             {
                 HandleFootstepSound();
+                footstepCooldown = footstepGracePeriod;
 
                 _animator.SetFloat(_lastHorizontal, _movement.x);
                 _animator.SetFloat(_lastVertical, _movement.y);
             }
             else
             {
-                StopAllFootsteps();
+                footstepCooldown -= Time.deltaTime;
+                if (footstepCooldown <= 0f)
+                    StopAllFootsteps();
             }
         }
         else
