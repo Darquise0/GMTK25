@@ -8,6 +8,7 @@ public class Combat : MonoBehaviour
     public float destroyAfterSeconds = 10f;
     public Lights playerLights;
     public Image healthBarFillImage;
+    public AudioSource rustle;
 
 
     void Update()
@@ -32,6 +33,7 @@ public class Combat : MonoBehaviour
 
             if (enemiesInLight[kvp.Key] >= destroyAfterSeconds)
             {
+                rustle.Play();
                 Destroy(kvp.Key);
                 toRemove.Add(kvp.Key);
             }

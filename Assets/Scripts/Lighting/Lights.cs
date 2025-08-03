@@ -37,6 +37,7 @@ public class Lights : MonoBehaviour
     private float ambientFlickerCooldown = 0f;
     public float ambientFlickerDelay = 10f;
     public float crankInterval = 3f;
+    private bool isPlaying = false;
 
     public float dimRate = 0.2f;
     public float minPlayerLightIntensity = 0f;
@@ -74,15 +75,17 @@ public class Lights : MonoBehaviour
 
     void Update()
     {
-        if (playerLight.intensity < 0.6f)
+        if (playerLight.intensity < 0.6f && !isPlaying)
         {
             Debug.Log("whispers");
             whisper.Play();
+            isPlaying = true;
         }
-        else
+        else if (isPlaying && playerLight.intensity > 0.6f)
         {
             Debug.Log("no whispers");
             whisper.Stop();
+            isPlaying = false;
         }
         
         if (ambientFlickerCooldown > 0f)
