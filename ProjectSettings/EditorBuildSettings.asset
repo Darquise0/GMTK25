@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LostWoods.unity
     guid: 1335342b0cc38c346b1b9db53a31844c
+  - enabled: 1
+    path: Assets/Scenes/End Credits.unity
+    guid: 5801d6dacfcfb5241a6f3200f8223a1e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
