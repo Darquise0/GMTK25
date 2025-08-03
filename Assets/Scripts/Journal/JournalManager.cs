@@ -7,6 +7,7 @@ public class JournalManager : MonoBehaviour
 
     public TextMeshProUGUI[] entries = new TextMeshProUGUI[3];
 
+    [SerializeField] AudioSource pageSound;
     public void startMinigame(JournalData jd)
     {
         prepareEntries(jd);
@@ -19,6 +20,7 @@ public class JournalManager : MonoBehaviour
         {
             entries[i].text = journalData.entries[i];
         }
+        pageSound.Play();
     }
 
     public void checkContradiction(int playerChoice)
