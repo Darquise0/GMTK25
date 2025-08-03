@@ -89,13 +89,6 @@ public class Lights : MonoBehaviour
         if (ambientFlickerCooldown > 0f)
             ambientFlickerCooldown -= Time.deltaTime;
 
-        if (Keyboard.current.tKey.wasPressedThisFrame)
-        {
-            isNight = !isNight;
-            globalTarget = isNight ? nightGlobalIntensity : dayGlobalIntensity;
-            t = 0f;
-        }
-
         if (Keyboard.current.fKey.wasPressedThisFrame && flashlightBatteryRemaining > 0f)
         {
             click.Play();
@@ -109,11 +102,6 @@ public class Lights : MonoBehaviour
         {
             if (!flashlightIsOn && flashlightBatteryRemaining < flashlightBatteryLife)
                 StartCoroutine(CrankRecharge());
-        }
-
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            playerLight.intensity = nightPlayerIntensity;
         }
 
         if (Mathf.Abs(globalLight.intensity - globalTarget) > 0.01f)
