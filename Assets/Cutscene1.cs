@@ -20,7 +20,7 @@ public class Cutscene1 : Cutscene
     {
         spriteRenderer = actor.GetComponent<SpriteRenderer>();
         animator = actor.GetComponent<Animator>();
-        localTarget = target.position;
+        
         animator.Play("Monster2_Idle");
     }
 
@@ -50,6 +50,9 @@ public class Cutscene1 : Cutscene
     IEnumerator moveUp()
     {
         animator.Play("Monster2_WalkLeft");
+
+        localTarget = target.position;
+
         spriteRenderer.flipX = true;
         while (Vector3.Distance(actor.transform.position, localTarget) > 0.05f)
         {
