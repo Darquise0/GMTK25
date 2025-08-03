@@ -59,11 +59,11 @@ public class Cutscene1 : Cutscene
             actor.transform.position = Vector3.MoveTowards(actor.transform.position, localTarget, moveSpeed * Time.deltaTime);
             yield return null;
         }
-
+        PlayerMovement.unfreeze();
         
         Global.loopCounter++;
         Global.save();
-        PlayerMovement.unfreeze();
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
 }
