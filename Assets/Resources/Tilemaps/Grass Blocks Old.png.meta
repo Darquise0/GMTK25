@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 51fc0f5b39d89a04aa130a582f236929
+guid: c66fadd2d77e58d4ea57f35c2b56290b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9134791157995557742
-    second: Grass Blocks (1)_0
+      213: -7020430442263380185
+    second: grass floor-Sheet_0
   - first:
-      213: 5481817892822642874
-    second: Grass Blocks (1)_1
+      213: 1272275412086800358
+    second: grass floor-Sheet_1
   - first:
-      213: 296388986530211464
-    second: Grass Blocks (1)_2
-  - first:
-      213: -5077507500354095928
-    second: Grass Blocks (1)_3
-  - first:
-      213: 819343034534933811
-    second: Grass Blocks (1)_4
-  - first:
-      213: -3927277808409274255
-    second: Grass Blocks (1)_5
+      213: 6835423895922651494
+    second: grass floor-Sheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 315
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,15 +102,28 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass Blocks (1)_2
+      name: grass floor-Sheet_1
       rect:
         serializedVersion: 2
-        x: 1264
-        y: 764
+        x: 1279
+        y: 479
         width: 322
         height: 322
       alignment: 0
@@ -130,42 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 886a871863cfc1400800000000000000
-      internalID: 296388986530211464
+      spriteID: 6efb5e91fb708a110800000000000000
+      internalID: 1272275412086800358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass Blocks (1)_3
-      rect:
-        serializedVersion: 2
-        x: 1264
-        y: 441
-        width: 322
-        height: 322
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c4330984d11989b0800000000000000
-      internalID: -5077507500354095928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass Blocks (1)_5
+      name: grass floor-Sheet_2
       rect:
         serializedVersion: 2
         x: 1279
         y: 0
         width: 322
-        height: 322
+        height: 321
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1789d7f04a18f79c0800000000000000
-      internalID: -3927277808409274255
+      spriteID: 661bfa551dd4cde50800000000000000
+      internalID: 6835423895922651494
       vertices: []
       indices: 
       edges: []
@@ -184,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 37a5c6745808d794b8b87fe893b9d1e2
+    spriteID: bcec18bc79cf56749a88f7e979288318
     internalID: 0
     vertices: []
     indices: 
@@ -194,12 +176,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Grass Blocks (1)_0: -9134791157995557742
-      Grass Blocks (1)_1: 5481817892822642874
-      Grass Blocks (1)_2: 296388986530211464
-      Grass Blocks (1)_3: -5077507500354095928
-      Grass Blocks (1)_4: 819343034534933811
-      Grass Blocks (1)_5: -3927277808409274255
+      grass floor-Sheet_0: -7020430442263380185
+      grass floor-Sheet_1: 1272275412086800358
+      grass floor-Sheet_10: 913709131
+      grass floor-Sheet_11: 1286678048
+      grass floor-Sheet_2: 6835423895922651494
+      grass floor-Sheet_3: 1132560368
+      grass floor-Sheet_4: 1058619281
+      grass floor-Sheet_5: 803364833
+      grass floor-Sheet_6: 896252550
+      grass floor-Sheet_7: -1002240312
+      grass floor-Sheet_8: -528772372
+      grass floor-Sheet_9: 829686575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
