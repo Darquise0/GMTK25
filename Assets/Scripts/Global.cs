@@ -35,6 +35,6 @@ public class Global : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "SampleScene") { playerData.playerPos = playerInstance.transform.position; }
 
         playerData.writtenToBefore = true;
-        playerData.visitedLostWoods = true;
+        playerData.visitedLostWoods = visitedLW;
     }
 }
