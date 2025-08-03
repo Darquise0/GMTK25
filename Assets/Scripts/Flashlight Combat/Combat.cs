@@ -4,19 +4,21 @@ using System.Collections.Generic;
 
 public class Combat : MonoBehaviour
 {
+    [SerializeField] private float lerpSpeed = 2.5f;
     private Dictionary<GameObject, float> enemiesInLight = new Dictionary<GameObject, float>();
     public float destroyAfterSeconds = 10f;
     public Lights playerLights;
     public Image healthBarFillImage;
     public AudioSource rustle;
+    private float targetFill;
 
 
     void Update()
     {
         if (playerLights != null && healthBarFillImage != null)
         {
-            float fillAmount = 1f - Mathf.InverseLerp(0f, playerLights.nightPlayerIntensity, playerLights.playerLight.intensity);
-            healthBarFillImage.fillAmount = fillAmount;
+            targetFill = playerLights.playerLight.intensity;
+            healthBarFillImage.fillAmount = Mathf.Lerp(healthBarFillImage.fillAmount, targetFill, lerpSpeed * Time.deltaTime);
         }
         
         List<GameObject> toRemove = new List<GameObject>();

@@ -75,15 +75,13 @@ public class Lights : MonoBehaviour
 
     void Update()
     {
-        if (playerLight.intensity < 0.6f && !isPlaying)
+        if (playerLight.intensity < 0.5f && !isPlaying)
         {
-            Debug.Log("whispers");
             whisper.Play();
             isPlaying = true;
         }
-        else if (isPlaying && playerLight.intensity > 0.6f)
+        else if (isPlaying && playerLight.intensity > 0.5f)
         {
-            Debug.Log("no whispers");
             whisper.Stop();
             isPlaying = false;
         }
@@ -220,11 +218,11 @@ public class Lights : MonoBehaviour
         {
             playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
         }
-        if (playerLight.intensity <= 0f)
-        {
-            Instantiate(gameOverPrefab, bar1.transform.parent.transform.parent);
-            Time.timeScale = 0f;
-        }
+        // if (playerLight.intensity <= 0f)
+        // {
+        //     Instantiate(gameOverPrefab, bar1.transform.parent.transform.parent);
+        //     Time.timeScale = 0f;
+        // }
     }
 
     public void ResetPlayerLight()
