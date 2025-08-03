@@ -10,7 +10,7 @@ public class PlayerDataLoader : MonoBehaviour
     {
         if (playerData.writtenToBefore)
         {
-            if (SceneManager.GetActiveScene().name == "SampleScene") { gameObject.transform.position = playerData.playerPos + new Vector3(0,-1,0); }
+            if (SceneManager.GetActiveScene().name == "CoolScene") { gameObject.transform.position = playerData.playerPos + new Vector3(0,-1,0); }
             lights.loadInstance(playerData);
         }
 

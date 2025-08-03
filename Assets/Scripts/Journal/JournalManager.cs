@@ -9,7 +9,6 @@ public class JournalManager : MonoBehaviour
 
     public void startMinigame(JournalData jd)
     {
-        Debug.Log(jd.entries.ToString());
         prepareEntries(jd);
     }
 

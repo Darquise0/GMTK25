@@ -142,4 +142,4 @@ MonoBehaviour:
   leafSpawner: {fileID: 8180527793683099284}
   isRunning: 0
   radioSprite: {fileID: 6296482435606032535, guid: 9247a6b248035344599c0849f6e8b8a1, type: 3}
-  journalSprite: {fileID: 0}
+  journalSprite: {fileID: 6524627194771785474, guid: 3fe90c00376ed4145ac52cbd37ad2974, type: 3}
