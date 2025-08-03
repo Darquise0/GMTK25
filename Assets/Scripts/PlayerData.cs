@@ -13,4 +13,6 @@ public class PlayerData : ScriptableObject
     public Vector3 playerPos;
 
     public bool writtenToBefore;
+
+    public bool visitedLostWoods;
 }
