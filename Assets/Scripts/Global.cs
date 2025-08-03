@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Global : MonoBehaviour
 {
-    public static int loopCounter = 0;
-    public static int evidenceCount = 0;
+    [SerializeField]public static int loopCounter = 0;
+    [SerializeField]public static int evidenceCount = 0;
 
     public static GameObject playerInstance;
 
