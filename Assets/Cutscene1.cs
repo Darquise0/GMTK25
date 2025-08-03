@@ -60,8 +60,6 @@ public class Cutscene1 : Cutscene
         Global.loopCounter++;
         Global.save();
 
-        Destroy(actor); 
-        Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
 }

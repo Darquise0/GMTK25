@@ -17,5 +17,5 @@ MonoBehaviour:
   playerIntensity: 0
   flashlightBatteryRemaining: 0
   playerPos: {x: 0, y: 0, z: 0}
-  writtenToBefore: 1
+  writtenToBefore: 0
   visitedLostWoods: 0
