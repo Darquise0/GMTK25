@@ -10,6 +10,6 @@ public class GameOverScreen : MonoBehaviour
 
     public void retry()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("CoolScene");
     }
 }
