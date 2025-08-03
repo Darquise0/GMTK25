@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: journal3
   m_EditorClassIdentifier: 
   entries:
-  - June 30th \n It was me who couldn't find peace.
-  - June 30th \n I still see him in the trees, I hear him in the wind. He's gonna
-    drag me down with him.
-  - June 30th \n LET ME GO \n LET ME GO \n LET ME GO \n LET ME GO \n LET ME GO \n
-    LET ME GO
+  - June 30th \n LET ME GO\nLET ME GO\nLET ME GO\nLET ME GO\nLET ME GO\nLET ME GO
+  - "June 30th \\n It feels like he\u2019s still here. Watching. Following. I think\u2026
+    I think he\u2019s punishing me. Every trail leads back to him. me down with him."
+  - "June 31st \\n I killed him. I told him to follow me and he did, like always.
+    I left him there. It doesn\u2019t matter why. I did it."
   contradictionIndex: 1

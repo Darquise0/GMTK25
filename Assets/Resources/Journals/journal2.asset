@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: journal2
   m_EditorClassIdentifier: 
   entries:
-  - June 30th \n We got lost, by we found our way back to camp he wasn't with me.
-  - June 30th \n The view from up there was so,so beautiful... but the earth gave
-    out from under him, he fell there was nothing I could do.
+  - June 30th \n I told him not to go far. He got turned around somewhere, I think.
+    Maybe he took a wrong path..
+  - "June 30th \\n The rocks were wet, the edge was steep \u2014 he must\u2019ve
+    slipped. I didn\u2019t see it happen. I swear."
   - June 30th \n I brought him there I didn't mean to it all just happened \n I still
     see him sometimes.
-  contradictionIndex: 3
+  contradictionIndex: 1

@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: journal1
   m_EditorClassIdentifier: 
   entries:
-  - June 30th \n Will was worried. He always does this, says he's got it handled
-    then when it's most important he forgets. He said he had the rations in his bag,
-    and now he's out there by himself, looking for berries.
-  - June 30th \n The city, the job, the family. it was all too much, that's why we
-    came out here. I wanted to look around, take in the scenery. Will trusted me
-    to lead. I did.
-  - June 30th \n Firewood. We needed firewood and Wiil said his dad taught him how
-    to pick it out. I haven't seen him since.
+  - "June 30th \\n Will went out to gather firewood. Said he\u2019d be back before
+    dark. I told him to stay close \u2014 these woods twist on you he had the rations
+    in his bag, and now he's out there by himself, looking for berries."
+  - "June 30th \\n There\u2019s a spot near the cliffs I remember from before. Told
+    Will I wanted to show him \u2014 a view he'd never forget."
+  - "June 30th \\n We were running low on food, so Will offered to check for berries
+    near the ridge. He said it wouldn\u2019t take long."
   contradictionIndex: 2
