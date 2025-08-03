@@ -2208,6 +2208,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave
       objectReference: {fileID: 0}
+    - target: {fileID: 3473623790422493485, guid: 907a2072d5e024145a718cd894cbf259, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546551664028466466, guid: 907a2072d5e024145a718cd894cbf259, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428421370875834840, guid: 907a2072d5e024145a718cd894cbf259, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8556970887761237909, guid: 907a2072d5e024145a718cd894cbf259, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2286,6 +2298,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556970887761237909, guid: 907a2072d5e024145a718cd894cbf259, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810993761897349807, guid: 907a2072d5e024145a718cd894cbf259, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
