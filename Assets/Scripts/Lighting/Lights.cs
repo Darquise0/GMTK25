@@ -93,7 +93,6 @@ public class Lights : MonoBehaviour
         {
             isNight = !isNight;
             globalTarget = isNight ? nightGlobalIntensity : dayGlobalIntensity;
-            // playerTarget = isNight ? nightPlayerIntensity : dayPlayerIntensity;
             t = 0f;
         }
 
@@ -218,11 +217,11 @@ public class Lights : MonoBehaviour
         {
             playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
         }
-        // if (playerLight.intensity <= 0f)
-        // {
-        //     Instantiate(gameOverPrefab, bar1.transform.parent.transform.parent);
-        //     Time.timeScale = 0f;
-        // }
+        if (playerLight.intensity <= 0f)
+        {
+            Instantiate(gameOverPrefab, bar1.transform.parent.transform.parent);
+            Time.timeScale = 0f;
+        }
     }
 
     public void ResetPlayerLight()

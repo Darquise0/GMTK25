@@ -10,8 +10,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] public Transform target;
     [SerializeField] public Collider2D lightCollider;
     Vector2 moveDirection;
-
-    // Variables added (yas)
     public AudioSource breathing;
     [SerializeField] private Collider2D chaseTrigger;
     [HideInInspector] public bool hasMadeDecision = false;
@@ -54,12 +52,6 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        // if (!hasMadeDecision && hasConverted)
-        // {
-        //     Debug.Log("Trying conversion from Update");
-        //     TryConvertToAnimal();
-        // }
-
         bool isMoving = moveDirection != Vector2.zero;
         animator.SetBool("isMoving", isMoving);
 
@@ -81,10 +73,6 @@ public class Enemy : MonoBehaviour
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
-
-            // Can be used to rotate the enemy when the follow:
-            // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            // rb.rotation = angle;
         }
         else
         {
@@ -113,21 +101,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // if (lightCollider.IsTouching(enemyCollider) && !hasMadeDecision)
-        // {
-        //     Debug.Log("Entered flashlight, trying conversion");
-        //     TryConvertToAnimal();
-        // }
-
-        // if (other.CompareTag("Player"))
-        // {
-        //     if (chaseTrigger != null && chaseTrigger.IsTouching(other))
-        //     {
-        //         Debug.Log("Player entered chase zone");
-        //         CommitToChase();
-        //     }
-        // }
-
         CommitToChase();
 
 
@@ -165,8 +138,6 @@ public class Enemy : MonoBehaviour
         hasMadeDecision = true;
 
         if (Random.value > 0.3f) return;
-
-        Debug.Log("converted");
 
         string prefabName = prefabType;
         GameObject animalPrefab = Resources.Load<GameObject>($"Prefabs/{prefabName}");
