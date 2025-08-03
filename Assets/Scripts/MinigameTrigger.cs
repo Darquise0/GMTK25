@@ -9,9 +9,16 @@ public class MinigameTrigger : MonoBehaviour
     public GameObject manager;
 
     bool isCollected;
+
+    Trigger trigger;
+
+    void Awake()
+    {
+        trigger = this.gameObject.GetComponent<Trigger>();
+    }
     void Update()
     {
-        if (this.gameObject.GetComponent<Trigger>().isTouchingPlayer() && InputManager.Interaction)
+        if (trigger.isTouchingPlayer() && InputManager.Interaction)
         {
             leafManager.gameObject.SetActive(true);
             PlayerMovement.freeze();
