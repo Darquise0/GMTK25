@@ -33,7 +33,6 @@ public class WaveManager : MonoBehaviour
             // more happening
             Global.evidenceCount++;
             waveDisplayPlayer.resetSliders();
-            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
     }

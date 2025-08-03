@@ -22,7 +22,6 @@ public class CutsceneEndingBad : Cutscene
     }
     public IEnumerator triggerCutscene()
     {
-        PlayerMovement.freeze();
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < dialogues.Length; i++)
         {

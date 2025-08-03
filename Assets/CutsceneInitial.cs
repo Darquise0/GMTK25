@@ -20,7 +20,6 @@ public class CutsceneInitial : Cutscene
     }
     public IEnumerator triggerCutscene()
     {
-        PlayerMovement.freeze();
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < dialogues.Length; i++)
         {
@@ -30,7 +29,6 @@ public class CutsceneInitial : Cutscene
         yield return StartCoroutine(moveRight());
         Destroy(gameObject);
         Destroy(actor);
-        PlayerMovement.unfreeze();
     }
 
     IEnumerator moveRight()

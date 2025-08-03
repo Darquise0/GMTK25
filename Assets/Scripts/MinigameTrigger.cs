@@ -20,7 +20,6 @@ public class MinigameTrigger : MonoBehaviour
         {
 
             leafManager.gameObject.SetActive(true);
-            PlayerMovement.freeze();
 
             leafManager.startMinigame(data, manager);
 

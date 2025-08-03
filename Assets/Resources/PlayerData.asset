@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c529a7b2f62474cb782b86f48da5e1, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  evidenceCount: 0
+  evidenceCount: 1
   loopCounter: 1
   playerIntensity: 2
-  flashlightBatteryRemaining: 23.317356
+  flashlightBatteryRemaining: 26.241165
   playerPos: {x: 0, y: 0, z: 0}
   writtenToBefore: 0
   visitedLostWoods: 0

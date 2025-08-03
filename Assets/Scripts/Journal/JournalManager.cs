@@ -34,7 +34,6 @@ public class JournalManager : MonoBehaviour
                 gameObject.GetComponent<EndingDecider>().decide();
             }
 
-            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
 
             

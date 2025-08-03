@@ -18,8 +18,6 @@ public class DialogueManager : MonoBehaviour
     }
     public IEnumerator startDialogue(DialogueData dialogueData)
     {
-        PlayerMovement.freeze();
-
         GameObject dialogueBubble = Instantiate(dialogueBubblePrefab, target.transform.position + dbOffset, Quaternion.identity);
         dialogueBubble.transform.parent = canvas.transform;
         TextMeshProUGUI tmp = dialogueBubble.GetComponentInChildren<TextMeshProUGUI>();
@@ -31,7 +29,6 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitUntil(() => !InputManager.Interaction);
         }
         Destroy(dialogueBubble);
-        PlayerMovement.unfreeze();
     }
 
     IEnumerator typeLine(string line, TextMeshProUGUI tmp)
