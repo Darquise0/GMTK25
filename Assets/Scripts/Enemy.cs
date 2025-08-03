@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         target = player.transform;
         playerLights = player.GetComponent<Lights>();
         lightCollider = playerLights.playerLight.gameObject.GetComponent<Collider2D>();
-        healthBarFillImage = GameObject.Find("Canvas").transform.GetChild(2).transform.GetChild(2).GetComponent<Image>();
+        healthBarFillImage = GameObject.Find("Healthbar").transform.Find("Bar").GetComponent<Image>();
         if (target != null)
         {
             animator.SetBool("isRight", target.position.x > transform.position.x);
