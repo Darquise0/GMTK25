@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   evidenceCount: 0
-  loopCounter: 0
+  loopCounter: 2
   playerIntensity: 0
   flashlightBatteryRemaining: 0
   playerPos: {x: 0, y: 0, z: 0}
-  writtenToBefore: 0
+  writtenToBefore: 1
   visitedLostWoods: 0

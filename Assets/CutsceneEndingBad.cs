@@ -14,17 +14,11 @@ public class CutsceneEndingBad : Cutscene
 
     void Start()
     {
+        actor = Global.playerInstance;
         spriteRenderer = actor.GetComponent<SpriteRenderer>();
         animator = actor.GetComponent<Animator>();
         localTarget = target.position;
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
-        { 
-            StartCoroutine(triggerCutscene());
-        }
+        StartCoroutine(triggerCutscene());
     }
     public IEnumerator triggerCutscene()
     {
