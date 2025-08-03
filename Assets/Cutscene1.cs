@@ -44,11 +44,16 @@ public class Cutscene1 : Cutscene
         PlayerMovement.unfreeze();
         yield return StartCoroutine(moveUp());
         
+<<<<<<< Updated upstream
+=======
+        PlayerMovement.unfreeze();
+        
+>>>>>>> Stashed changes
     }
 
     IEnumerator moveUp()
     {
-        PlayerMovement.unfreeze();
+        
         animator.Play("Monster2_WalkLeft");
 
         localTarget = target.position;
