@@ -8,12 +8,10 @@ public class MinigameTrigger : MonoBehaviour
     public LeafManager leafManager;
     public GameObject manager;
 
-    bool isTouchingPlayer;
-
     bool isCollected;
     void Update()
     {
-        if (isTouchingPlayer && InputManager.Interaction)
+        if (this.gameObject.GetComponent<Trigger>().isTouchingPlayer() && InputManager.Interaction)
         {
             leafManager.gameObject.SetActive(true);
             PlayerMovement.freeze();
@@ -24,19 +22,5 @@ public class MinigameTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            isTouchingPlayer = true;
-        }
-    }
     
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            isTouchingPlayer = false;
-        }
-    }
 }

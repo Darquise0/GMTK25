@@ -28,7 +28,7 @@ public class WaveManager : MonoBehaviour
         && waveDisplayPlayer.wavelengthSlider.value == waveDisplayExample.waveData.neededWavelength)
         {
             brokenRadio.Play();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
             brokenRadio.Stop();
             // more happening
             waveDisplayPlayer.resetSliders();

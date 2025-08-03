@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class Cutscene : MonoBehaviour
 {
-    [SerializeField] DialogueData[] dialogues;
-    [SerializeField] DialogueManager dialogueManager;
+    [SerializeField] protected DialogueData[] dialogues;
+    [SerializeField] protected DialogueManager dialogueManager;
 
-    [SerializeField] GameObject[] targets;
+    [SerializeField] protected GameObject[] targets;
 
-    IEnumerator triggerCutscene()
+    protected IEnumerator triggerCutscene()
     {
+        PlayerMovement.freeze();
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < dialogues.Length; i++)
         {
@@ -17,10 +18,14 @@ public class Cutscene : MonoBehaviour
             yield return StartCoroutine(dialogueManager.startDialogue(dialogues[i]));
         }
         Destroy(gameObject);
+        PlayerMovement.unfreeze();
     }
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(triggerCutscene());
+        if (this.gameObject.GetComponent<Trigger>().isTouchingPlayer())
+        { 
+            StartCoroutine(triggerCutscene());
+        }   
     }
 }
