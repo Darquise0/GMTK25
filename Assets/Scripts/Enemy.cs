@@ -119,14 +119,16 @@ public class Enemy : MonoBehaviour
         //     TryConvertToAnimal();
         // }
 
-        if (other.CompareTag("Player"))
-        {
-            if (chaseTrigger != null && chaseTrigger.IsTouching(other))
-            {
-                Debug.Log("Player entered chase zone");
-                CommitToChase();
-            }
-        }
+        // if (other.CompareTag("Player"))
+        // {
+        //     if (chaseTrigger != null && chaseTrigger.IsTouching(other))
+        //     {
+        //         Debug.Log("Player entered chase zone");
+        //         CommitToChase();
+        //     }
+        // }
+
+        CommitToChase();
 
 
         if (other.CompareTag("PlayerSpotlightTrigger"))

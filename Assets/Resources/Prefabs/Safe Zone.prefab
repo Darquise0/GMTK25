@@ -83,8 +83,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 390194907
-  m_SortingLayer: 2
+  m_SortingLayerID: -1177739121
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4216062261190715884, guid: aa3253b9f2a4173409e167dd03fbac63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,7 +162,7 @@ MonoBehaviour:
   playerTag: Player
   cutoffY: -0.2
   layerAbovePlayer: Objects
-  layerBelowPlayer: Ground
+  layerBelowPlayer: Enemy
   isOOB: 0
 --- !u!114 &4254132249110525582
 MonoBehaviour:
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 47051563e153319ba95d4c96dbe64117
+  m_ApplyToSortingLayers: 47051563e153319ba95d4c96dbe641178f20cdb943d5d6e7dbe64117
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 5
@@ -562,12 +562,12 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.4
+  m_FalloffIntensity: 0.682
   m_Color: {r: 1, g: 0.6039216, b: 0, a: 0.8352941}
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 47051563dbe64117e153319b
+  m_ApplyToSortingLayers: 47051563dbe64117a95d4c96
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 5
