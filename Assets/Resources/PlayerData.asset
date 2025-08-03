@@ -15,7 +15,7 @@ MonoBehaviour:
   evidenceCount: 0
   loopCounter: 1
   playerIntensity: 2
-  flashlightBatteryRemaining: 23.881165
+  flashlightBatteryRemaining: 23.317356
   playerPos: {x: 0, y: 0, z: 0}
   writtenToBefore: 0
   visitedLostWoods: 0
