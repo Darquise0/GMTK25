@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutsceneEndingBad : Cutscene
 {
@@ -36,7 +37,7 @@ public class CutsceneEndingBad : Cutscene
         }
         yield return StartCoroutine(moveRight());
         Destroy(gameObject);
-        Destroy(actor);
+        SceneManager.LoadScene("End Credits");
     }
 
     IEnumerator moveRight()
