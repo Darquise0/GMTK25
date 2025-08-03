@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd26d6c4f7a016047b32b21253ca6259, type: 3}
+  m_Name: Line1
+  m_EditorClassIdentifier: 
+  lines:
+  - What... was I-
+  - Who... was I looking for again?
+  - No. No, I came here alone.
+  - "I just got turned around... That\u2019s all."
+  - "I\u2019ll head back to camp. Try again tomorrow."
