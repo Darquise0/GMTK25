@@ -10,12 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd26d6c4f7a016047b32b21253ca6259, type: 3}
-  m_Name: Line1
+  m_Name: Line6
   m_EditorClassIdentifier: 
   lines:
-  - William...?
-  - "That\u2019s not... is that\u2014"
-  - "No, no... he was just\u2014 I told him to go up ahead..."
-  - "Why would he go that far? He never\u2014"
-  - That ridge... I was just going to talk to him.
-  - Why can't I remember?
+  - In a minute. I want to grab something from my pack first.
