@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void retry()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("CoolScene");
     }
 }
