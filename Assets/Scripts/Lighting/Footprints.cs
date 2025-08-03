@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Footprints : MonoBehaviour
 {
-    public Collider2D flashlightCollider; // Assign the flashlight collider in Inspector
+    public Collider2D flashlightCollider;
     private SpriteRenderer spriteRenderer;
     private Collider2D ownCollider;
 
