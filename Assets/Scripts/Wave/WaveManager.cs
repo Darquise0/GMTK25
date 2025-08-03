@@ -31,6 +31,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(3f);
             brokenRadio.Stop();
             // more happening
+            Global.evidenceCount++;
             waveDisplayPlayer.resetSliders();
             PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);

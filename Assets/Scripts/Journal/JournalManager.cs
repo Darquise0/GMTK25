@@ -27,6 +27,7 @@ public class JournalManager : MonoBehaviour
     {
         if (playerChoice == journalData.contradictionIndex)
         {
+            Global.evidenceCount++;
             PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
