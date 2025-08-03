@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CutsceneInitial : Cutscene
+public class Cutscene1 : Cutscene
 {
     public float moveSpeed;
     public Transform target;
@@ -11,12 +12,25 @@ public class CutsceneInitial : Cutscene
     Animator animator;
     SpriteRenderer spriteRenderer;
 
-    void Start()
+    public PlayerData playerData;
+
+    private bool played;
+
+    void Awake()
     {
         spriteRenderer = actor.GetComponent<SpriteRenderer>();
         animator = actor.GetComponent<Animator>();
         localTarget = target.position;
-        StartCoroutine(triggerCutscene());
+        animator.Play("Monster2_Idle");
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player" && !played)
+        { 
+            played = true;
+            StartCoroutine(triggerCutscene());
+        }
     }
     public IEnumerator triggerCutscene()
     {
@@ -27,22 +41,27 @@ public class CutsceneInitial : Cutscene
             dialogueManager.target = targets[i];
             yield return StartCoroutine(dialogueManager.startDialogue(dialogues[i]));
         }
-        yield return StartCoroutine(moveRight());
-        Destroy(gameObject);
-        Destroy(actor);
-        PlayerMovement.unfreeze();
+        yield return StartCoroutine(moveUp());
+        
+        
+        
     }
 
-    IEnumerator moveRight()
+    IEnumerator moveUp()
     {
-        animator.SetBool("isWalking", true);
+        animator.Play("Monster2_WalkLeft");
         spriteRenderer.flipX = true;
         while (Vector3.Distance(actor.transform.position, localTarget) > 0.05f)
         {
             actor.transform.position = Vector3.MoveTowards(actor.transform.position, localTarget, moveSpeed * Time.deltaTime);
             yield return null;
         }
+        
+        Global.loopCounter++;
+        Global.save();
 
-        animator.SetBool("isWalking", false);
+        Destroy(actor); 
+        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

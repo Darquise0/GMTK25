@@ -8,6 +8,8 @@ public class Cutscene : MonoBehaviour
 
     [SerializeField] protected GameObject[] targets;
 
+    public bool isInitial;
+
     protected IEnumerator triggerCutscene()
     {
         PlayerMovement.freeze();
@@ -19,13 +21,5 @@ public class Cutscene : MonoBehaviour
         }
         Destroy(gameObject);
         PlayerMovement.unfreeze();
-    }
-
-    void Update()
-    {
-        if (this.gameObject.GetComponent<Trigger>().isTouchingPlayer())
-        { 
-            StartCoroutine(triggerCutscene());
-        }   
     }
 }
