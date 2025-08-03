@@ -16,7 +16,14 @@ public class CutsceneEndingBad : Cutscene
         spriteRenderer = actor.GetComponent<SpriteRenderer>();
         animator = actor.GetComponent<Animator>();
         localTarget = target.position;
-        StartCoroutine(triggerCutscene());
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        { 
+            StartCoroutine(triggerCutscene());
+        }
     }
     public IEnumerator triggerCutscene()
     {
@@ -30,19 +37,18 @@ public class CutsceneEndingBad : Cutscene
         yield return StartCoroutine(moveRight());
         Destroy(gameObject);
         Destroy(actor);
-        PlayerMovement.unfreeze();
     }
 
     IEnumerator moveRight()
     {
-        animator.SetBool("isWalking", true);
+        animator.Play("Walk-RIGHT");
+        //animator.gameObject.GetComponent<Collider>().enabled=false;
+        Camera.main.GetComponent<CameraFollow>().setPosition(Camera.main.transform.position);
         spriteRenderer.flipX = true;
         while (Vector3.Distance(actor.transform.position, localTarget) > 0.05f)
         {
             actor.transform.position = Vector3.MoveTowards(actor.transform.position, localTarget, moveSpeed * Time.deltaTime);
             yield return null;
         }
-
-        animator.SetBool("isWalking", false);
     }
 }
