@@ -28,16 +28,7 @@ public class JournalManager : MonoBehaviour
         if (playerChoice == journalData.contradictionIndex)
         {
             Global.evidenceCount++;
-
-            if (Global.loopCounter == 2)
-            {
-                gameObject.GetComponent<EndingDecider>().decide();
-            }
-
             this.gameObject.SetActive(false);
-
-            
-
         }
     }
 }
