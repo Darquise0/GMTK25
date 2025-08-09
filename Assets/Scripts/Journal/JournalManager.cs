@@ -27,7 +27,8 @@ public class JournalManager : MonoBehaviour
     {
         if (playerChoice == journalData.contradictionIndex)
         {
-            Global.evidenceCount++;
+            GameEventsManager.instance.evidenceEvents.EvidenceGained(1);
+            GameEventsManager.instance.miscEvents.EvidenceCollected();
             this.gameObject.SetActive(false);
         }
     }

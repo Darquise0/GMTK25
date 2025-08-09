@@ -14,6 +14,6 @@ public class PlayerDataLoader : MonoBehaviour
             lights.loadInstance(playerData);
         }
 
-        Global.playerInstance = gameObject;
+        // Global.playerInstance = gameObject;
     }
 }
