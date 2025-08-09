@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.dialogueEvents.onEnterDialogue += EnterDialogue;
-        GameEventsManager.instance.inputManager.GetComponent<PlayerInput>().actions["Interact"].performed += SubmitPressed;
+        InputManager.OnInteract += SubmitPressed;
         GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex += UpdateChoiceIndex;
         GameEventsManager.instance.dialogueEvents.onUpdateInkDialogueVariable += UpdateInkDialogueVariable;
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
@@ -42,13 +42,13 @@ public class DialogueManager : MonoBehaviour
     private void OnDisable()
     {
         GameEventsManager.instance.dialogueEvents.onEnterDialogue -= EnterDialogue;
-        GameEventsManager.instance.inputManager.GetComponent<PlayerInput>().actions["Interact"].performed -= SubmitPressed;
+        InputManager.OnInteract -= SubmitPressed;
         GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex -= UpdateChoiceIndex;
         GameEventsManager.instance.dialogueEvents.onUpdateInkDialogueVariable -= UpdateInkDialogueVariable;
         GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
     }
 
-    private void SubmitPressed(InputAction.CallbackContext context)
+    private void SubmitPressed()
     {
         // If dialogue isn't playing, we never want to register input here
         if (!dialoguePlaying)

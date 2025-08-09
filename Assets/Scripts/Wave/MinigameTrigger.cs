@@ -14,9 +14,20 @@ public class MinigameTrigger : MonoBehaviour
     {
         trigger = this.gameObject.GetComponent<Trigger>();
     }
-    void Update()
+
+    void OnEnable()
     {
-        if (trigger.isTouchingPlayer() && InputManager.Interaction)
+        InputManager.OnInteract += SubmitPressed;
+    }
+
+    void OnDisable()
+    {
+        InputManager.OnInteract -= SubmitPressed;
+    }
+
+    void SubmitPressed()
+    {
+        if (trigger.isTouchingPlayer())
         {
 
             leafManager.gameObject.SetActive(true);
@@ -26,6 +37,4 @@ public class MinigameTrigger : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    
 }

@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class InputManager : MonoBehaviour
 {
+    public static event Action OnInteract;
     public static Vector2 Movement;
-
-    public static bool Interaction;
 
     private PlayerInput _playerInput;
     private InputAction _moveAction, _interaction;
@@ -13,14 +13,15 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
+
         _moveAction = _playerInput.actions["Move"];
         _interaction = _playerInput.actions["Interact"];
+
+        _interaction.performed += ctx => OnInteract?.Invoke();
     }
 
     private void Update()
     {
         Movement = _moveAction.ReadValue<Vector2>();
-
-        Interaction = _interaction.triggered;
     }
 }

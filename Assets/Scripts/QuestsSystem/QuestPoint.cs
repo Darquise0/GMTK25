@@ -28,16 +28,16 @@ public class QuestPoint : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
-        GameEventsManager.instance.inputManager.GetComponent<PlayerInput>().actions["Interact"].performed += SubmitPressed;
+        InputManager.OnInteract += SubmitPressed;
     }
 
     private void OnDisable()
     {
         GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
-        GameEventsManager.instance.inputManager.GetComponent<PlayerInput>().actions["Interact"].performed -= SubmitPressed;
+        InputManager.OnInteract -= SubmitPressed;
     }
 
-    private void SubmitPressed(InputAction.CallbackContext context)
+    private void SubmitPressed()
     {
         if (!playerIsNear)
         {
