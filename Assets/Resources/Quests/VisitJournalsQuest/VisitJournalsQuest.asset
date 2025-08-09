@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c6137be0e114b49a172e4274bba55b, type: 3}
+  m_Name: VisitJournalsQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: VisitJournalsQuest
+  displayName: Visit the Journals!
+  questPrerequesites:
+  - {fileID: 11400000, guid: ee11be65b9f241642aaad2c890c28c77, type: 2}
+  questStepPrefabs:
+  - {fileID: 2607901517987101735, guid: 69d0ee3f7fea95648a621141f4d0ff56, type: 3}
+  - {fileID: 2607901517987101735, guid: ed4e6aaf3dbc3dd4aaed874e14d1e5be, type: 3}
+  - {fileID: 2607901517987101735, guid: 07d2ead8405bed24cbf4ce4fa29a00d6, type: 3}
+  reward: 1

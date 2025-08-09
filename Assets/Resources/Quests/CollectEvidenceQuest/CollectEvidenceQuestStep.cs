@@ -20,11 +20,24 @@ public class CollectEvidenceQuest : QuestStep
         if (evidenceCollected < evidenceToComplete)
         {
             evidenceCollected++;
+            UpdateState();
         }
 
         if (evidenceCollected >= evidenceToComplete)
         {
             FinishQuestStep();
         }
+    }
+
+    private void UpdateState()
+    {
+        string state = evidenceCollected.ToString();
+        ChangeState(state);
+    }
+
+    protected override void SetQuestStepState(string state)
+    {
+        this.evidenceCollected = System.Int32.Parse(state);
+        UpdateState();
     }
 }
