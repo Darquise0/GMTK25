@@ -31,7 +31,8 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(3f);
             brokenRadio.Stop();
             // more happening
-            Global.evidenceCount++;
+            GameEventsManager.instance.evidenceEvents.EvidenceGained(1);
+            GameEventsManager.instance.miscEvents.EvidenceCollected();
             waveDisplayPlayer.resetSliders();
             this.gameObject.SetActive(false);
         }
