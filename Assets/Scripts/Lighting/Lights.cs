@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Lights : MonoBehaviour
 {
@@ -51,8 +52,10 @@ public class Lights : MonoBehaviour
 
     public GameObject gameOverPrefab;
 
-    void Start()
+    void Awake()
     {
+        LoadGameNow();
+        
         isNight = true;
         playerTarget = nightPlayerIntensity;
 
@@ -85,7 +88,7 @@ public class Lights : MonoBehaviour
             whisper.Stop();
             isPlaying = false;
         }
-        
+
         if (ambientFlickerCooldown > 0f)
             ambientFlickerCooldown -= Time.deltaTime;
 
@@ -286,5 +289,29 @@ public class Lights : MonoBehaviour
             yield return new WaitForSeconds(remaining);
 
         RechargeToNextBar();
+    }
+    public void SaveGameNow()
+    {
+        SaveData data = new SaveData
+        {
+            playerX = transform.position.x,
+            playerY = transform.position.y,
+            playerHealth = playerLight.intensity,
+            Battery = flashlightBatteryRemaining,
+            currentScene = SceneManager.GetActiveScene().name
+        };
+
+        SaveSystem.OnSave(data);
+    }
+
+    public void LoadGameNow()
+    {
+        SaveData data = SaveSystem.OnLoad();
+        if (data != null)
+        {
+            transform.position = new Vector3(data.playerX, data.playerY, transform.position.z);
+            playerLight.intensity = data.playerHealth;
+            flashlightBatteryRemaining = data.Battery;
+        }
     }
 }

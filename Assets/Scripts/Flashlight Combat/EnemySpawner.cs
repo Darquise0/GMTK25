@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !spawned[Global.loopCounter])
+        if (collision.gameObject.tag == "Player" && !spawned[Current.CurrentSave.loop])
         {
             StartCoroutine(spawnEnemies());
         }
@@ -24,8 +24,8 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator spawnEnemies()
     {
-        spawned[Global.loopCounter] = true;
-        foreach (GameObject enemy in enemies[Global.loopCounter].array)
+        spawned[Current.CurrentSave.loop] = true;
+        foreach (GameObject enemy in enemies[Current.CurrentSave.loop].array)
         {
             Debug.Log("Spawned enemy");
             Instantiate(enemy, chooseRandomSpawnPoint(), Quaternion.identity);

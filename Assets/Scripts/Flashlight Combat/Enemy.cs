@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     public float drainDelay = 1f;
     private bool isCommittedToChase = false;
     private Vector3 startPosition;
+    private GameObject player;
 
     public Lights playerLights;
     public Image healthBarFillImage;
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour
             animator.SetBool("isBunny", true);
         }
 
-        GameObject player = Global.playerInstance;
+        player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         playerLights = player.GetComponent<Lights>();
         lightCollider = playerLights.playerLight.gameObject.GetComponent<Collider2D>();

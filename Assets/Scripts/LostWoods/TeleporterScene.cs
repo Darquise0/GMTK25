@@ -10,9 +10,9 @@ public class TeleporterScene : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !Global.visitedLW)
+        if (collision.gameObject.tag == "Player" && !Current.CurrentSave.visitLostWoods)
         {
-            Global.save();
+            Current.SaveGame();
             SceneManager.LoadScene(sceneName);
         }
     }
