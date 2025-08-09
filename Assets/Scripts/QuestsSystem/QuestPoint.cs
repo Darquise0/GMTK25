@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CircleCollider2D))]
 public class QuestPoint : MonoBehaviour
 {
+    [Header("Dialogue (optional)")]
+    [SerializeField] private string dialogueKnotName;
+
     [Header("Quest")]
     [SerializeField] private QuestInfoSO questInfoForPoint;
 
@@ -41,13 +44,22 @@ public class QuestPoint : MonoBehaviour
             return;
         }
 
-        if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
+        // If we have a knot name defined, try to start dialogue with it
+        if (!dialogueKnotName.Equals(""))
         {
-            GameEventsManager.instance.questEvents.StartQuest(questId);
+            GameEventsManager.instance.dialogueEvents.EnterDialogue(dialogueKnotName);
         }
-        else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
+        // Otherwise, start or finish the quest immediately without dialogue
+        else
         {
-            GameEventsManager.instance.questEvents.FinishQuest(questId);
+            if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
+            {
+                GameEventsManager.instance.questEvents.StartQuest(questId);
+            }
+            else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
+            {
+                GameEventsManager.instance.questEvents.FinishQuest(questId);
+            }
         }
     }
 
