@@ -10,4 +10,5 @@ VAR CollectEvidenceQuestId = "CollectEvidenceQuest"
 VAR CollectEvidenceQuestState = "REQUIREMENTS_NOT_MET"
 
 // ink files
-INCLUDE collect_evidence_npc.ink
+INCLUDE collect_evidence_start_npc.ink
+INCLUDE collect_evidence_finish_npc.ink
