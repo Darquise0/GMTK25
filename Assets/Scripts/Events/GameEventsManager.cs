@@ -4,6 +4,7 @@ using System;
 public class GameEventsManager : MonoBehaviour
 {
     public static GameEventsManager instance{ get; private set; }
+    public InputEvents inputEvents;
     public EvidenceEvents evidenceEvents;
     public MiscEvents miscEvents;
     public QuestEvents questEvents;
@@ -17,6 +18,7 @@ public class GameEventsManager : MonoBehaviour
         }
         instance = this;
 
+        inputEvents = new InputEvents();
         evidenceEvents = new EvidenceEvents();
         miscEvents = new MiscEvents();
         questEvents = new QuestEvents();

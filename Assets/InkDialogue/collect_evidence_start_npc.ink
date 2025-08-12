@@ -9,11 +9,11 @@
 }
 
 = requirementsNotMet
-Come back once you've leveled up a bit more.
+Come back once you've met the requirements for the quest.
 -> END
 
 = canStart
-Will you collect 5 coins and bring them to my friend over there?
+Will you collect 2 pieces of evidence and bring them to my friend over there?
 * [Yes]
     ~ StartQuest(CollectEvidenceQuestId)
     Great!

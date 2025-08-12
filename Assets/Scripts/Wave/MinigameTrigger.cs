@@ -17,15 +17,15 @@ public class MinigameTrigger : MonoBehaviour
 
     void OnEnable()
     {
-        InputManager.OnInteract += SubmitPressed;
+        GameEventsManager.instance.inputEvents.onSubmitPressed += SubmitPressed;
     }
 
     void OnDisable()
     {
-        InputManager.OnInteract -= SubmitPressed;
+        GameEventsManager.instance.inputEvents.onSubmitPressed -= SubmitPressed;
     }
 
-    void SubmitPressed()
+    void SubmitPressed(InputEventContext inputEventContext)
     {
         if (trigger.isTouchingPlayer())
         {

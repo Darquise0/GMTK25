@@ -4,24 +4,23 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
-    public static event Action OnInteract;
-    public static Vector2 Movement;
-
-    private PlayerInput _playerInput;
-    private InputAction _moveAction, _interaction;
+    private PlayerInput playerInput;
+    private InputAction moveAction;
+    private InputAction interactAction;
 
     private void Awake()
     {
-        _playerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
 
-        _moveAction = _playerInput.actions["Move"];
-        _interaction = _playerInput.actions["Interact"];
+        moveAction = playerInput.actions["Move"];
+        interactAction = playerInput.actions["Interact"];
 
-        _interaction.performed += ctx => OnInteract?.Invoke();
+        interactAction.performed += ctx => GameEventsManager.instance.inputEvents.SubmitPressed();
     }
 
     private void Update()
     {
-        Movement = _moveAction.ReadValue<Vector2>();
+        Vector2 moveDir = moveAction.ReadValue<Vector2>();
+        GameEventsManager.instance.inputEvents.MovePressed(moveDir);
     }
 }

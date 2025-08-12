@@ -30,19 +30,28 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        PlayerMovement.frozen = false;
+        frozen = false;
     }
 
-    void Start()
+    private void OnEnable()
     {
-        PlayerMovement.frozen = false;
+        GameEventsManager.instance.inputEvents.onMovePressed += OnMovePressed;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.inputEvents.onMovePressed -= OnMovePressed;
+    }
+
+    private void OnMovePressed(Vector2 moveDir)
+    {
+        _movement = moveDir;
     }
 
     private void Update()
     {
         if (!frozen)
         {
-            _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
             _rb.linearVelocity = _movement * _moveSpeed;
 
             _animator.SetFloat(_horizontal, _movement.x);

@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Ink.Runtime;
-using System.Collections;
-using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -33,7 +30,7 @@ public class DialogueManager : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.instance.dialogueEvents.onEnterDialogue += EnterDialogue;
-        InputManager.OnInteract += SubmitPressed;
+        GameEventsManager.instance.inputEvents.onSubmitPressed += SubmitPressed;
         GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex += UpdateChoiceIndex;
         GameEventsManager.instance.dialogueEvents.onUpdateInkDialogueVariable += UpdateInkDialogueVariable;
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
@@ -42,16 +39,16 @@ public class DialogueManager : MonoBehaviour
     private void OnDisable()
     {
         GameEventsManager.instance.dialogueEvents.onEnterDialogue -= EnterDialogue;
-        InputManager.OnInteract -= SubmitPressed;
+        GameEventsManager.instance.inputEvents.onSubmitPressed -= SubmitPressed;
         GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex -= UpdateChoiceIndex;
         GameEventsManager.instance.dialogueEvents.onUpdateInkDialogueVariable -= UpdateInkDialogueVariable;
         GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
     }
 
-    private void SubmitPressed()
+    private void SubmitPressed(InputEventContext inputEventContext)
     {
         // If dialogue isn't playing, we never want to register input here
-        if (!dialoguePlaying)
+        if (!inputEventContext.Equals(InputEventContext.DIALOGUE))
         {
             return;
         }
@@ -71,7 +68,10 @@ public class DialogueManager : MonoBehaviour
 
     private void QuestStateChange(Quest quest)
     {
-        GameEventsManager.instance.dialogueEvents.UpdateInkDialogueVariable(quest.info.id + "State", new StringValue(quest.state.ToString()));
+        GameEventsManager.instance.dialogueEvents.UpdateInkDialogueVariable(
+            quest.info.id + "State",
+            new StringValue(quest.state.ToString())
+        );
     }
 
     private void EnterDialogue(string knotName)
@@ -83,6 +83,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialoguePlaying = true;
+
+        GameEventsManager.instance.inputEvents.ChangeInputEventContext(InputEventContext.DIALOGUE);
 
         // Inform other parts of our system that we've started dialogue
         GameEventsManager.instance.dialogueEvents.DialogueStarted();
@@ -138,15 +140,15 @@ public class DialogueManager : MonoBehaviour
         }
         else if (story.currentChoices.Count == 0)
         {
-            StartCoroutine(ExitDialogue());
+            ExitDialogue();
         }
     }
 
-    private IEnumerator ExitDialogue()
+    private void ExitDialogue()
     {
-        yield return null;
-
         dialoguePlaying = false;
+
+        GameEventsManager.instance.inputEvents.ChangeInputEventContext(InputEventContext.DEFAULT);
 
         // Inform other parts of our system that we've finished dialogue
         GameEventsManager.instance.dialogueEvents.DialogueFinished();
