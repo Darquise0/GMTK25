@@ -204,7 +204,7 @@ public class Lights : MonoBehaviour
 
     public void DimPlayerLight()
     {
-        if (!inLight && !PlayerMovement.frozen)
+        if (!inLight && !PlayerMovement.isFrozen())
         {
             playerLight.intensity = Mathf.Max(playerLight.intensity - dimRate, minPlayerLightIntensity);
         }

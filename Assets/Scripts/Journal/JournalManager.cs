@@ -29,6 +29,8 @@ public class JournalManager : MonoBehaviour
         {
             GameEventsManager.instance.evidenceEvents.EvidenceGained(1);
             GameEventsManager.instance.miscEvents.EvidenceCollected();
+
+            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
     }

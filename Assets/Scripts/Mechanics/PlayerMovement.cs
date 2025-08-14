@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private float footstepCooldown = 0f;
     private float footstepGracePeriod = 0.5f;
 
-    public static bool frozen;
+    static bool frozen;
 
     private void Awake()
     {
@@ -114,4 +114,6 @@ public class PlayerMovement : MonoBehaviour
 
     public static void freeze() => frozen = true;
     public static void unfreeze() => frozen = false;
+
+    public static bool isFrozen() { return frozen; }
 }

@@ -90,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         GameEventsManager.instance.dialogueEvents.DialogueStarted();
 
         // Freeze player movement
-        PlayerMovement.frozen = true;
+        PlayerMovement.freeze();
 
         // Jump to the knot
         if (!knotName.Equals(""))
@@ -154,7 +154,7 @@ public class DialogueManager : MonoBehaviour
         GameEventsManager.instance.dialogueEvents.DialogueFinished();
 
         // Unfreeze player movement
-        PlayerMovement.frozen = false;
+        PlayerMovement.unfreeze();
 
         // Stop listening for dialogue variables        
         inkDialogueVariables.StopListening(story);

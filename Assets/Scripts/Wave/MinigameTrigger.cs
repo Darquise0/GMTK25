@@ -29,6 +29,7 @@ public class MinigameTrigger : MonoBehaviour
     {
         if (trigger.isTouchingPlayer())
         {
+            PlayerMovement.freeze();
 
             leafManager.gameObject.SetActive(true);
 

@@ -34,6 +34,8 @@ public class WaveManager : MonoBehaviour
             GameEventsManager.instance.evidenceEvents.EvidenceGained(1);
             GameEventsManager.instance.miscEvents.EvidenceCollected();
             waveDisplayPlayer.resetSliders();
+
+            PlayerMovement.unfreeze();
             this.gameObject.SetActive(false);
         }
     }
