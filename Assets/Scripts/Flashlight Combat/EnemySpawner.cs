@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour
 
     public float waitTime;
 
+    public bool spawn;
+
     void Awake()
     {
         spawned = new bool[enemies.Length];
@@ -16,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !spawned[Current.CurrentSave.loop])
+        if (collision.gameObject.tag == "Player")//&& !spawned[Current.CurrentSave.loop])
         {
             StartCoroutine(spawnEnemies());
         }
@@ -24,15 +26,24 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator spawnEnemies()
     {
-        spawned[Current.CurrentSave.loop] = true;
+        /*spawned[Current.CurrentSave.loop] = true;
         foreach (GameObject enemy in enemies[Current.CurrentSave.loop].array)
         {
             Debug.Log("Spawned enemy");
             Instantiate(enemy, chooseRandomSpawnPoint(), Quaternion.identity);
             yield return new WaitForSeconds(waitTime);
 
-        }
+        }*/
+
+        //1.Faster enemeis
+        //2.Continuous spawning
         
+
+        while (spawn)
+        {
+            Instantiate(enemies[Current.CurrentSave.loop].array[0], chooseRandomSpawnPoint(), Quaternion.identity);
+            yield return new WaitForSeconds(waitTime);
+        } 
     }
 
     Vector3 chooseRandomSpawnPoint()
